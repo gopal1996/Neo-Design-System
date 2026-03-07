@@ -19,7 +19,9 @@
     "dist",
     "src/tokens",
     "src/components",
-    "src/index.ts"
+    "src/index.ts",
+    "neo.md",
+    "scripts"
   ],
   "scripts": {
     "build": "tsup",
@@ -32,7 +34,8 @@
     "storybook:ios": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start --ios",
     "storybook:android": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start --android",
     "storybook-generate": "sb-rn-get-stories",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "postinstall": "node scripts/install-skill.js"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

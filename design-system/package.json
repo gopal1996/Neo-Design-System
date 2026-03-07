@@ -15,7 +15,9 @@
     "./styles.css": "./dist/styles.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "neo.md",
+    "scripts"
   ],
   "sideEffects": [
     "dist/styles.css"
@@ -25,7 +27,8 @@
     "build:watch": "tsup --watch",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "postinstall": "node scripts/install-skill.js"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

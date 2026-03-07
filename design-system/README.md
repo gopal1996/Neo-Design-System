@@ -176,6 +176,25 @@ var(--radius-full) /* 9999px */
 
 ---
 
+## Claude Code Integration
+
+Installing this package automatically adds a `/neo` skill to Claude Code. In any project, run:
+
+```
+/neo
+```
+
+This loads the full Neo design system context — tokens, component APIs, Figma MCP flow, and styling rules — into your Claude session.
+
+**Manual install** (if the postinstall didn't run or you don't use npm):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/your-org/figma-ai/main/design-system/neo.md \
+  -o ~/.claude/skills/neo.md
+```
+
+---
+
 ## Storybook
 
 ```bash

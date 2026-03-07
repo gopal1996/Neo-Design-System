@@ -1,4 +1,4 @@
 import { registerRootComponent } from 'expo';
-import StorybookUIRoot from './.storybook';
+import App from './App';
 
-registerRootComponent(StorybookUIRoot);
+registerRootComponent(App);

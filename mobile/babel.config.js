@@ -1,11 +1,4 @@
 module.exports = {
   presets: ['babel-preset-expo'],
-  plugins: [
-    [
-      '@storybook/react-native/babel',
-      {
-        configPath: './.storybook',
-      },
-    ],
-  ],
+  plugins: ['react-native-reanimated/plugin'],
 };

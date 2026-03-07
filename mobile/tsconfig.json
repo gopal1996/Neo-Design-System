@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["ES2020"],
+    "lib": [
+      "ES2020"
+    ],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
@@ -13,9 +15,17 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@neo/mobile/*": ["src/*"]
+      "@neo/mobile/*": [
+        "src/*"
+      ]
     }
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "extends": "expo/tsconfig.base"
 }

@@ -17,6 +17,7 @@
     "@storybook/react-vite": "^8.6.18",
     "storybook": "^8.6.18",
     "typescript": "^5.9.3",
+    "react-native-web": "^0.19.13",
     "vite": "^6.4.1"
   }
 }

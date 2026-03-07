@@ -1,7 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: ['../src/components/**/*.stories.?(ts|tsx|js|jsx)'],
+  // Path is relative to repo root (storybook runs from there, not from mobile/)
+  stories: ['../mobile/src/components/**/*.stories.?(ts|tsx|js|jsx)'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
@@ -15,12 +16,10 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       resolve: {
         alias: {
-          // Redirect react-native imports to react-native-web for web builds
           'react-native': 'react-native-web',
         },
       },
       define: {
-        // Required by some RN internals
         __DEV__: JSON.stringify(true),
         global: 'window',
       },

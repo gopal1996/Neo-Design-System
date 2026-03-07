@@ -64,16 +64,14 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: mobile/package-lock.json
+          cache-dependency-path: package-lock.json
 
-      # Mobile is not a workspace — install inside the folder
+      # Root has storybook v8 + react-native-web — no version conflict
       - name: Install dependencies
-        working-directory: mobile
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
       - name: Build Storybook
-        working-directory: mobile
-        run: npm run build-storybook -- --output-dir ../gh-pages/mobile
+        run: npx storybook build --config-dir mobile/.storybook --output-dir gh-pages/mobile
         env:
           NODE_OPTIONS: --max-old-space-size=4096
 

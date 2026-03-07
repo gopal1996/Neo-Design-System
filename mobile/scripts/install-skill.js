@@ -4,13 +4,13 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-const skillsDir = path.join(os.homedir(), '.claude', 'skills');
+const skillDir = path.join(os.homedir(), '.claude', 'skills', 'neo');
 const skillSrc = path.join(__dirname, '..', 'neo.md');
-const skillDest = path.join(skillsDir, 'neo.md');
+const skillDest = path.join(skillDir, 'SKILL.md');
 
 try {
-  if (!fs.existsSync(skillsDir)) {
-    fs.mkdirSync(skillsDir, { recursive: true });
+  if (!fs.existsSync(skillDir)) {
+    fs.mkdirSync(skillDir, { recursive: true });
   }
   fs.copyFileSync(skillSrc, skillDest);
   console.log('');

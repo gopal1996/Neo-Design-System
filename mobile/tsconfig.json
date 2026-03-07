@@ -13,7 +13,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@nexus/mobile/*": ["src/*"]
+      "@neo/mobile/*": ["src/*"]
     }
   },
   "include": ["src"],

@@ -1,0 +1,506 @@
+{
+  "$schema": "https://neo-ds.dev/registry-schema.json",
+  "meta": {
+    "name": "Neo Mobile Design System",
+    "version": "1.0.0",
+    "platform": "react-native",
+    "packageName": "@neo/mobile",
+    "importPath": "@neo/mobile"
+  },
+  "components": [
+    {
+      "name": "Button",
+      "description": "Primary interactive element. Supports 5 variants, 5 sizes, loading state, and left/right icon slots.",
+      "file": "src/components/Button/Button.tsx",
+      "exports": ["Button"],
+      "props": [
+        { "name": "variant",   "type": "'primary'|'secondary'|'ghost'|'danger'|'success'", "default": "'primary'", "required": false },
+        { "name": "size",      "type": "'xs'|'sm'|'md'|'lg'|'xl'",                         "default": "'md'",      "required": false },
+        { "name": "loading",   "type": "boolean",                                           "default": "false",     "required": false },
+        { "name": "iconLeft",  "type": "React.ReactNode",                                   "default": "undefined", "required": false },
+        { "name": "iconRight", "type": "React.ReactNode",                                   "default": "undefined", "required": false },
+        { "name": "fullWidth", "type": "boolean",                                           "default": "false",     "required": false },
+        { "name": "disabled",  "type": "boolean",                                           "default": "false",     "required": false },
+        { "name": "children",  "type": "React.ReactNode",                                   "default": "undefined", "required": false },
+        { "name": "style",     "type": "ViewStyle",                                         "default": "undefined", "required": false }
+      ],
+      "variants": {
+        "variant": ["primary", "secondary", "ghost", "danger", "success"],
+        "size": ["xs", "sm", "md", "lg", "xl"]
+      },
+      "sizeMap": {
+        "xs": { "height": 28, "paddingH": 10, "fontSize": 11 },
+        "sm": { "height": 32, "paddingH": 12, "fontSize": 13 },
+        "md": { "height": 40, "paddingH": 16, "fontSize": 14 },
+        "lg": { "height": 48, "paddingH": 20, "fontSize": 16 },
+        "xl": { "height": 56, "paddingH": 24, "fontSize": 17 }
+      },
+      "notes": "Uses forwardRef. Passes all TouchableOpacityProps. Disabled state at 40% opacity.",
+      "examples": [
+        "<Button>Save</Button>",
+        "<Button variant=\"secondary\" size=\"sm\">Cancel</Button>",
+        "<Button variant=\"danger\" loading={isDeleting}>Delete</Button>",
+        "<Button iconLeft={<PlusIcon />} fullWidth>Add Item</Button>"
+      ]
+    },
+    {
+      "name": "Text",
+      "description": "Typography component covering all text scales and semantic colors.",
+      "file": "src/components/Text/Text.tsx",
+      "exports": ["Text"],
+      "props": [
+        { "name": "variant",  "type": "'display'|'h1'|'h2'|'h3'|'h4'|'h5'|'body-lg'|'body'|'body-sm'|'caption'|'overline'|'mono'", "default": "'body'",    "required": false },
+        { "name": "color",    "type": "'primary'|'secondary'|'tertiary'|'brand'|'success'|'warning'|'error'|'info'",                 "default": "'primary'", "required": false },
+        { "name": "children", "type": "React.ReactNode",                                                                             "default": "—",         "required": true  },
+        { "name": "style",    "type": "TextStyle",                                                                                   "default": "undefined", "required": false }
+      ],
+      "variants": {
+        "variant": ["display", "h1", "h2", "h3", "h4", "h5", "body-lg", "body", "body-sm", "caption", "overline", "mono"],
+        "color": ["primary", "secondary", "tertiary", "brand", "success", "warning", "error", "info"]
+      },
+      "variantStyles": {
+        "display":  { "fontSize": 48, "fontWeight": "800", "lineHeight": 52,  "letterSpacing": -2 },
+        "h1":       { "fontSize": 36, "fontWeight": "700", "lineHeight": 40,  "letterSpacing": -1.2 },
+        "h2":       { "fontSize": 30, "fontWeight": "700", "lineHeight": 36,  "letterSpacing": -0.8 },
+        "h3":       { "fontSize": 24, "fontWeight": "600", "lineHeight": 30,  "letterSpacing": -0.4 },
+        "h4":       { "fontSize": 20, "fontWeight": "600", "lineHeight": 26,  "letterSpacing": -0.3 },
+        "h5":       { "fontSize": 18, "fontWeight": "600", "lineHeight": 24,  "letterSpacing": -0.2 },
+        "body-lg":  { "fontSize": 18, "fontWeight": "400", "lineHeight": 28 },
+        "body":     { "fontSize": 16, "fontWeight": "400", "lineHeight": 24 },
+        "body-sm":  { "fontSize": 14, "fontWeight": "400", "lineHeight": 20 },
+        "caption":  { "fontSize": 12, "fontWeight": "400", "lineHeight": 16,  "letterSpacing": 0.2 },
+        "overline": { "fontSize": 11, "fontWeight": "600", "lineHeight": 16,  "letterSpacing": 1.2, "textTransform": "uppercase" },
+        "mono":     { "fontSize": 14, "fontWeight": "400", "fontFamily": "monospace" }
+      },
+      "examples": [
+        "<Text variant=\"h2\">Dashboard</Text>",
+        "<Text variant=\"body\" color=\"secondary\">Supporting copy</Text>",
+        "<Text variant=\"overline\" color=\"brand\">Section Label</Text>",
+        "<Text variant=\"caption\" color=\"tertiary\">Last updated 2h ago</Text>"
+      ]
+    },
+    {
+      "name": "Badge",
+      "description": "Compact status pill with optional dot indicator.",
+      "file": "src/components/Badge/Badge.tsx",
+      "exports": ["Badge"],
+      "props": [
+        { "name": "variant",  "type": "'default'|'brand'|'success'|'warning'|'error'|'info'|'outline'", "default": "'default'", "required": false },
+        { "name": "size",     "type": "'sm'|'md'|'lg'",                                                  "default": "'md'",     "required": false },
+        { "name": "dot",      "type": "boolean",                                                          "default": "false",    "required": false },
+        { "name": "children", "type": "React.ReactNode",                                                  "default": "—",        "required": true  },
+        { "name": "style",    "type": "ViewStyle",                                                        "default": "undefined","required": false }
+      ],
+      "variants": {
+        "variant": ["default", "brand", "success", "warning", "error", "info", "outline"],
+        "size": ["sm", "md", "lg"]
+      },
+      "sizeMap": {
+        "sm": { "height": 18, "paddingH": 6,  "fontSize": 10 },
+        "md": { "height": 22, "paddingH": 8,  "fontSize": 11 },
+        "lg": { "height": 26, "paddingH": 10, "fontSize": 13 }
+      },
+      "examples": [
+        "<Badge>Default</Badge>",
+        "<Badge variant=\"brand\" dot>New</Badge>",
+        "<Badge variant=\"success\" size=\"sm\">Active</Badge>",
+        "<Badge variant=\"error\">Failed</Badge>"
+      ]
+    },
+    {
+      "name": "Avatar",
+      "description": "Circular user avatar supporting image, name initials, or placeholder. Includes status indicator.",
+      "file": "src/components/Avatar/Avatar.tsx",
+      "exports": ["Avatar", "AvatarGroup"],
+      "props": [
+        { "name": "src",    "type": "string",                                          "default": "undefined", "required": false, "comment": "Image URI" },
+        { "name": "name",   "type": "string",                                          "default": "undefined", "required": false, "comment": "Generates initials + color when no src" },
+        { "name": "size",   "type": "'xs'|'sm'|'md'|'lg'|'xl'|'2xl'",                 "default": "'md'",      "required": false },
+        { "name": "status", "type": "'online'|'offline'|'busy'|'away'",                "default": "undefined", "required": false },
+        { "name": "style",  "type": "ViewStyle",                                       "default": "undefined", "required": false }
+      ],
+      "sizeMap": {
+        "xs":  24,
+        "sm":  32,
+        "md":  40,
+        "lg":  48,
+        "xl":  64,
+        "2xl": 80
+      },
+      "statusColors": {
+        "online":  "#10B981",
+        "offline": "#55556E",
+        "busy":    "#EF4444",
+        "away":    "#F59E0B"
+      },
+      "subComponents": [
+        {
+          "name": "AvatarGroup",
+          "props": [
+            { "name": "avatars", "type": "AvatarProps[]",                           "required": true  },
+            { "name": "max",     "type": "number",             "default": "4",      "required": false },
+            { "name": "size",    "type": "'xs'|'sm'|'md'|'lg'|'xl'|'2xl'", "default": "'md'", "required": false }
+          ]
+        }
+      ],
+      "examples": [
+        "<Avatar name=\"John Doe\" size=\"md\" status=\"online\" />",
+        "<Avatar src=\"https://example.com/avatar.jpg\" size=\"lg\" />",
+        "<AvatarGroup avatars={users} max={4} size=\"sm\" />"
+      ]
+    },
+    {
+      "name": "Card",
+      "description": "Surface container with optional interactive press state. Includes CardHeader, CardBody, CardFooter sub-components.",
+      "file": "src/components/Card/Card.tsx",
+      "exports": ["Card", "CardHeader", "CardBody", "CardFooter"],
+      "props": [
+        { "name": "variant",     "type": "'default'|'elevated'|'brand'|'flat'", "default": "'default'", "required": false },
+        { "name": "interactive", "type": "boolean",                             "default": "false",     "required": false },
+        { "name": "padding",     "type": "'none'|'sm'|'md'|'lg'|'xl'",         "default": "'md'",      "required": false },
+        { "name": "children",   "type": "React.ReactNode",                     "default": "—",         "required": true  },
+        { "name": "onPress",    "type": "() => void",                          "default": "undefined", "required": false },
+        { "name": "style",      "type": "ViewStyle",                           "default": "undefined", "required": false }
+      ],
+      "variantStyles": {
+        "default":  { "bg": "#0F0F1A", "border": "#2C2C4A" },
+        "elevated": { "bg": "#13131F", "border": "#2C2C4A" },
+        "brand":    { "bg": "rgba(124,58,237,0.06)", "border": "rgba(109,40,217,0.30)" },
+        "flat":     { "bg": "#1A1A2E", "border": "#1E1E35" }
+      },
+      "paddingMap": {
+        "none": 0, "sm": 12, "md": 16, "lg": 24, "xl": 32
+      },
+      "examples": [
+        "<Card><CardHeader>...</CardHeader><CardBody>...</CardBody></Card>",
+        "<Card variant=\"brand\" padding=\"lg\">...</Card>",
+        "<Card interactive onPress={handlePress} variant=\"elevated\">...</Card>"
+      ]
+    },
+    {
+      "name": "Input",
+      "description": "Text input with label, hint, error, and icon slot support. Uses forwardRef.",
+      "file": "src/components/Input/Input.tsx",
+      "exports": ["Input"],
+      "props": [
+        { "name": "label",     "type": "string",        "default": "undefined", "required": false },
+        { "name": "hint",      "type": "string",        "default": "undefined", "required": false },
+        { "name": "error",     "type": "string",        "default": "undefined", "required": false, "comment": "Shows error state + message" },
+        { "name": "size",      "type": "'sm'|'md'|'lg'","default": "'md'",      "required": false },
+        { "name": "iconLeft",  "type": "React.ReactNode","default": "undefined","required": false },
+        { "name": "iconRight", "type": "React.ReactNode","default": "undefined","required": false },
+        { "name": "fullWidth", "type": "boolean",       "default": "false",     "required": false },
+        { "name": "editable",  "type": "boolean",       "default": "true",      "required": false },
+        { "name": "style",     "type": "ViewStyle",     "default": "undefined", "required": false }
+      ],
+      "notes": "Extends TextInputProps. Focus state changes border to violet-400 (1.5px). Error state shows red border + message.",
+      "sizeMap": {
+        "sm": { "height": 32, "fontSize": 13, "paddingH": 12 },
+        "md": { "height": 40, "fontSize": 14, "paddingH": 16 },
+        "lg": { "height": 48, "fontSize": 16, "paddingH": 16 }
+      },
+      "examples": [
+        "<Input label=\"Email\" placeholder=\"you@example.com\" />",
+        "<Input label=\"Password\" error=\"Required\" secureTextEntry />",
+        "<Input hint=\"Optional\" iconLeft={<SearchIcon />} />"
+      ]
+    },
+    {
+      "name": "Switch",
+      "description": "Animated toggle with controlled/uncontrolled modes, optional label and hint.",
+      "file": "src/components/Switch/Switch.tsx",
+      "exports": ["Switch"],
+      "props": [
+        { "name": "checked",        "type": "boolean",            "default": "undefined", "required": false, "comment": "Controlled mode" },
+        { "name": "defaultChecked", "type": "boolean",            "default": "false",     "required": false, "comment": "Uncontrolled initial value" },
+        { "name": "onChange",       "type": "(v: boolean) => void","default": "undefined","required": false },
+        { "name": "disabled",       "type": "boolean",            "default": "false",     "required": false },
+        { "name": "size",           "type": "'sm'|'md'|'lg'",     "default": "'md'",      "required": false },
+        { "name": "label",          "type": "string",             "default": "undefined", "required": false },
+        { "name": "hint",           "type": "string",             "default": "undefined", "required": false },
+        { "name": "style",          "type": "ViewStyle",          "default": "undefined", "required": false }
+      ],
+      "sizeMap": {
+        "sm": { "trackW": 32, "trackH": 18, "thumbSize": 12 },
+        "md": { "trackW": 44, "trackH": 24, "thumbSize": 18 },
+        "lg": { "trackW": 56, "trackH": 30, "thumbSize": 22 }
+      },
+      "examples": [
+        "<Switch label=\"Notifications\" onChange={setEnabled} />",
+        "<Switch checked={value} onChange={setValue} size=\"lg\" />",
+        "<Switch disabled label=\"Locked feature\" />"
+      ]
+    },
+    {
+      "name": "Spinner",
+      "description": "Loading indicator in three animation styles.",
+      "file": "src/components/Spinner/Spinner.tsx",
+      "exports": ["Spinner"],
+      "props": [
+        { "name": "size",    "type": "'xs'|'sm'|'md'|'lg'|'xl'",   "default": "'md'",           "required": false },
+        { "name": "variant", "type": "'ring'|'dots'|'pulse'",        "default": "'ring'",         "required": false },
+        { "name": "color",   "type": "string",                       "default": "colors.violet400","required": false },
+        { "name": "style",   "type": "ViewStyle",                    "default": "undefined",      "required": false }
+      ],
+      "sizeMap": {
+        "xs": 12, "sm": 16, "md": 24, "lg": 32, "xl": 48
+      },
+      "notes": "Has accessibilityRole='progressbar' and accessibilityLabel='Loading'.",
+      "examples": [
+        "<Spinner />",
+        "<Spinner size=\"lg\" variant=\"dots\" />",
+        "<Spinner variant=\"pulse\" color={colors.success} />"
+      ]
+    },
+    {
+      "name": "Tabs",
+      "description": "Horizontal tab navigator with three visual styles, badge support, and disabled tabs.",
+      "file": "src/components/Tabs/Tabs.tsx",
+      "exports": ["Tabs", "TabPanel"],
+      "props": [
+        { "name": "items",      "type": "TabItem[]",              "default": "—",         "required": true  },
+        { "name": "defaultTab", "type": "string",                 "default": "items[0].id","required": false },
+        { "name": "active",     "type": "string",                 "default": "undefined", "required": false, "comment": "Controlled mode" },
+        { "name": "onChange",   "type": "(id: string) => void",   "default": "undefined", "required": false },
+        { "name": "variant",    "type": "'line'|'pill'|'enclosed'","default": "'line'",   "required": false },
+        { "name": "children",  "type": "React.ReactNode",         "default": "undefined", "required": false },
+        { "name": "style",     "type": "ViewStyle",               "default": "undefined", "required": false }
+      ],
+      "tabItemShape": {
+        "id":       "string",
+        "label":    "string",
+        "badge":    "string | number | undefined",
+        "disabled": "boolean | undefined"
+      },
+      "subComponents": [
+        {
+          "name": "TabPanel",
+          "description": "Renders children only when its id matches the active tab.",
+          "props": [
+            { "name": "id",       "type": "string",         "required": true },
+            { "name": "children", "type": "React.ReactNode","required": true }
+          ]
+        }
+      ],
+      "examples": [
+        "<Tabs items={[{id:'a',label:'Overview'},{id:'b',label:'Details'}]}>\n  <TabPanel id=\"a\"><OverviewContent /></TabPanel>\n  <TabPanel id=\"b\"><DetailsContent /></TabPanel>\n</Tabs>",
+        "<Tabs items={tabs} variant=\"pill\" active={tab} onChange={setTab} />"
+      ]
+    },
+    {
+      "name": "Divider",
+      "description": "Horizontal or vertical separator with optional centered label.",
+      "file": "src/components/Divider/Divider.tsx",
+      "exports": ["Divider"],
+      "props": [
+        { "name": "variant",     "type": "'default'|'subtle'|'strong'|'brand'",  "default": "'default'",    "required": false },
+        { "name": "orientation", "type": "'horizontal'|'vertical'",               "default": "'horizontal'", "required": false },
+        { "name": "label",       "type": "string",                                "default": "undefined",   "required": false },
+        { "name": "labelAlign",  "type": "'left'|'center'|'right'",               "default": "'center'",    "required": false },
+        { "name": "spacing",     "type": "'sm'|'md'|'lg'",                        "default": "'md'",        "required": false },
+        { "name": "style",       "type": "ViewStyle",                             "default": "undefined",   "required": false }
+      ],
+      "notes": "Horizontal divider uses StyleSheet.hairlineWidth. Vertical form needs a fixed-height parent.",
+      "examples": [
+        "<Divider />",
+        "<Divider label=\"OR\" variant=\"subtle\" />",
+        "<Divider orientation=\"vertical\" />",
+        "<Divider variant=\"brand\" label=\"Neo\" labelAlign=\"left\" />"
+      ]
+    },
+    {
+      "name": "Checkbox",
+      "description": "Animated checkbox with controlled/uncontrolled modes, indeterminate state, and validation.",
+      "file": "src/components/Checkbox/Checkbox.tsx",
+      "exports": ["Checkbox"],
+      "props": [
+        { "name": "checked",        "type": "boolean",             "default": "undefined", "required": false },
+        { "name": "defaultChecked", "type": "boolean",             "default": "false",     "required": false },
+        { "name": "onChange",       "type": "(v: boolean) => void","default": "undefined", "required": false },
+        { "name": "label",          "type": "string",              "default": "undefined", "required": false },
+        { "name": "description",    "type": "string",              "default": "undefined", "required": false },
+        { "name": "error",          "type": "string",              "default": "undefined", "required": false },
+        { "name": "size",           "type": "'sm'|'md'|'lg'",      "default": "'md'",      "required": false },
+        { "name": "disabled",       "type": "boolean",             "default": "false",     "required": false },
+        { "name": "indeterminate",  "type": "boolean",             "default": "false",     "required": false },
+        { "name": "style",          "type": "ViewStyle",           "default": "undefined", "required": false }
+      ],
+      "sizeMap": {
+        "sm": { "box": 14, "fontSize": 13 },
+        "md": { "box": 16, "fontSize": 14 },
+        "lg": { "box": 20, "fontSize": 16 }
+      },
+      "examples": [
+        "<Checkbox label=\"I agree to the terms\" onChange={setAgreed} />",
+        "<Checkbox checked={all} indeterminate={some} onChange={handleAll} />",
+        "<Checkbox label=\"Required\" error=\"This field is required\" />"
+      ]
+    },
+    {
+      "name": "Radio",
+      "description": "Animated radio button with controlled/uncontrolled modes and validation.",
+      "file": "src/components/Radio/Radio.tsx",
+      "exports": ["Radio"],
+      "props": [
+        { "name": "checked",        "type": "boolean",             "default": "undefined", "required": false },
+        { "name": "defaultChecked", "type": "boolean",             "default": "false",     "required": false },
+        { "name": "onChange",       "type": "(v: boolean) => void","default": "undefined", "required": false },
+        { "name": "label",          "type": "string",              "default": "undefined", "required": false },
+        { "name": "description",    "type": "string",              "default": "undefined", "required": false },
+        { "name": "error",          "type": "string",              "default": "undefined", "required": false },
+        { "name": "size",           "type": "'sm'|'md'|'lg'",      "default": "'md'",      "required": false },
+        { "name": "disabled",       "type": "boolean",             "default": "false",     "required": false },
+        { "name": "value",          "type": "string",              "default": "undefined", "required": false },
+        { "name": "style",          "type": "ViewStyle",           "default": "undefined", "required": false }
+      ],
+      "notes": "Radio cannot be unchecked by pressing again. Use a group pattern for mutual exclusion.",
+      "examples": [
+        "<Radio label=\"Option A\" value=\"a\" checked={val==='a'} onChange={() => setVal('a')} />",
+        "<Radio label=\"Option B\" description=\"More details\" value=\"b\" checked={val==='b'} onChange={() => setVal('b')} />"
+      ]
+    },
+    {
+      "name": "AppBar",
+      "description": "Top navigation bar with left/right slot, title, subtitle, and status bar awareness.",
+      "file": "src/components/AppBar/AppBar.tsx",
+      "exports": ["AppBar", "AppBarBackButton", "AppBarAction"],
+      "props": [
+        { "name": "title",        "type": "string",                               "default": "—",         "required": true  },
+        { "name": "subtitle",     "type": "string",                               "default": "undefined", "required": false },
+        { "name": "left",         "type": "React.ReactNode",                      "default": "undefined", "required": false },
+        { "name": "right",        "type": "React.ReactNode",                      "default": "undefined", "required": false },
+        { "name": "variant",      "type": "'default'|'transparent'|'elevated'",   "default": "'default'", "required": false },
+        { "name": "safeAreaTop",  "type": "number",                               "default": "auto",      "required": false },
+        { "name": "style",        "type": "ViewStyle",                            "default": "undefined", "required": false }
+      ],
+      "subComponents": [
+        {
+          "name": "AppBarBackButton",
+          "props": [
+            { "name": "onPress", "type": "() => void", "required": true },
+            { "name": "label",   "type": "string",     "required": false }
+          ]
+        },
+        {
+          "name": "AppBarAction",
+          "props": [
+            { "name": "icon",               "type": "React.ReactNode", "required": true },
+            { "name": "onPress",            "type": "() => void",      "required": true },
+            { "name": "accessibilityLabel", "type": "string",          "required": true },
+            { "name": "badge",              "type": "boolean | number","required": false }
+          ]
+        }
+      ],
+      "notes": "Android auto-detects StatusBar.currentHeight. Pass safeAreaTop from useSafeAreaInsets().top on iOS.",
+      "examples": [
+        "<AppBar title=\"Settings\" left={<AppBarBackButton onPress={goBack} />} />",
+        "<AppBar title=\"Home\" variant=\"elevated\" right={<AppBarAction icon={<BellIcon />} onPress={openNotifs} accessibilityLabel=\"Notifications\" badge={3} />} />"
+      ]
+    },
+    {
+      "name": "Banner",
+      "description": "Inline alert/notification with icon, title, description, up to 2 actions, and optional dismiss.",
+      "file": "src/components/Banner/Banner.tsx",
+      "exports": ["Banner"],
+      "props": [
+        { "name": "variant",         "type": "'info'|'success'|'warning'|'error'", "default": "'info'",    "required": false },
+        { "name": "title",           "type": "string",                             "default": "undefined", "required": false },
+        { "name": "description",     "type": "string",                             "default": "—",         "required": true  },
+        { "name": "icon",            "type": "React.ReactNode",                    "default": "auto",      "required": false, "comment": "Falls back to built-in variant icon" },
+        { "name": "action",          "type": "{ label: string; onPress: () => void }","default": "undefined","required": false },
+        { "name": "secondaryAction", "type": "{ label: string; onPress: () => void }","default": "undefined","required": false },
+        { "name": "onDismiss",       "type": "() => void",                         "default": "undefined", "required": false },
+        { "name": "style",           "type": "ViewStyle",                          "default": "undefined", "required": false }
+      ],
+      "examples": [
+        "<Banner description=\"Your session expires in 5 minutes.\" />",
+        "<Banner variant=\"success\" title=\"Saved!\" description=\"Changes have been applied.\" onDismiss={() => setVisible(false)} />",
+        "<Banner variant=\"error\" title=\"Failed\" description=\"Check your connection.\" action={{ label: 'Retry', onPress: retry }} />"
+      ]
+    },
+    {
+      "name": "BottomNavigation",
+      "description": "Tab bar with animated active indicator, icon renderer, badge support, and safe area awareness.",
+      "file": "src/components/BottomNavigation/BottomNavigation.tsx",
+      "exports": ["BottomNavigation"],
+      "props": [
+        { "name": "items",          "type": "BottomNavItem[]",        "default": "—",     "required": true  },
+        { "name": "active",         "type": "string",                 "default": "—",     "required": true  },
+        { "name": "onChange",       "type": "(id: string) => void",   "default": "—",     "required": true  },
+        { "name": "safeAreaBottom", "type": "number",                 "default": "0",     "required": false, "comment": "Pass useSafeAreaInsets().bottom" },
+        { "name": "style",          "type": "ViewStyle",              "default": "undefined","required": false }
+      ],
+      "bottomNavItemShape": {
+        "id":    "string",
+        "label": "string",
+        "icon":  "(active: boolean) => React.ReactNode",
+        "badge": "string | number | boolean | undefined"
+      },
+      "notes": "Badge: boolean shows dot; number shows count (capped at 99+); false hides.",
+      "examples": [
+        "const tabs = [\n  { id: 'home', label: 'Home', icon: (a) => <HomeIcon color={a ? colors.violet300 : colors.textTertiary} /> },\n  { id: 'search', label: 'Search', icon: (a) => <SearchIcon color={a ? colors.violet300 : colors.textTertiary} /> },\n];\n<BottomNavigation items={tabs} active={route} onChange={setRoute} safeAreaBottom={insets.bottom} />"
+      ]
+    },
+    {
+      "name": "FAB",
+      "description": "Floating action button with spring show/hide animation and optional extended label.",
+      "file": "src/components/FAB/FAB.tsx",
+      "exports": ["FAB"],
+      "props": [
+        { "name": "icon",               "type": "React.ReactNode",              "default": "—",        "required": true  },
+        { "name": "label",              "type": "string",                       "default": "undefined","required": false, "comment": "Makes FAB extended (pill shape)" },
+        { "name": "size",               "type": "'sm'|'md'|'lg'",               "default": "'md'",     "required": false },
+        { "name": "variant",            "type": "'primary'|'secondary'|'surface'","default": "'primary'","required": false },
+        { "name": "onPress",            "type": "() => void",                   "default": "—",        "required": true  },
+        { "name": "visible",            "type": "boolean",                      "default": "true",     "required": false },
+        { "name": "disabled",           "type": "boolean",                      "default": "false",    "required": false },
+        { "name": "accessibilityLabel", "type": "string",                       "default": "—",        "required": true  },
+        { "name": "style",              "type": "ViewStyle",                    "default": "undefined","required": false }
+      ],
+      "sizeMap": {
+        "sm": { "size": 40, "iconSize": 18 },
+        "md": { "size": 56, "iconSize": 24 },
+        "lg": { "size": 64, "iconSize": 28 }
+      },
+      "examples": [
+        "<FAB icon={<PlusIcon />} onPress={create} accessibilityLabel=\"Create new item\" />",
+        "<FAB icon={<PlusIcon />} label=\"New Post\" variant=\"primary\" onPress={create} accessibilityLabel=\"Create post\" />",
+        "<FAB icon={<EditIcon />} visible={!scrolling} size=\"sm\" variant=\"secondary\" onPress={edit} accessibilityLabel=\"Edit\" />"
+      ]
+    },
+    {
+      "name": "DataTable",
+      "description": "Full-featured data table with sorting, search, pagination, striped rows, and custom cell rendering.",
+      "file": "src/components/DataTable/DataTable.tsx",
+      "exports": ["DataTable"],
+      "props": [
+        { "name": "columns",           "type": "ColumnDef<T>[]",                   "default": "—",        "required": true  },
+        { "name": "data",              "type": "T[]",                              "default": "—",        "required": true  },
+        { "name": "rowKey",            "type": "keyof T | ((row: T) => string|number)","default": "—",   "required": true  },
+        { "name": "sortable",          "type": "boolean",                          "default": "false",    "required": false },
+        { "name": "searchable",        "type": "boolean",                          "default": "false",    "required": false },
+        { "name": "searchPlaceholder", "type": "string",                           "default": "'Search…'","required": false },
+        { "name": "pageSize",          "type": "number",                           "default": "undefined","required": false },
+        { "name": "striped",           "type": "boolean",                          "default": "false",    "required": false },
+        { "name": "density",           "type": "'compact'|'comfortable'|'spacious'","default": "'comfortable'","required": false },
+        { "name": "loading",           "type": "boolean",                          "default": "false",    "required": false },
+        { "name": "emptyState",        "type": "React.ReactNode",                  "default": "built-in", "required": false },
+        { "name": "onRowPress",        "type": "(row: T, i: number) => void",      "default": "undefined","required": false },
+        { "name": "style",             "type": "ViewStyle",                        "default": "undefined","required": false }
+      ],
+      "columnDefShape": {
+        "key":        "string",
+        "header":     "string",
+        "renderCell": "(value, row, index) => React.ReactNode | undefined",
+        "sortFn":     "(a, b) => number | undefined",
+        "sortable":   "boolean | undefined",
+        "searchable": "boolean | undefined",
+        "width":      "number | undefined",
+        "align":      "'left'|'center'|'right' | undefined"
+      },
+      "examples": [
+        "const columns: ColumnDef<User>[] = [\n  { key: 'name',   header: 'Name',   sortable: true },\n  { key: 'status', header: 'Status', renderCell: (v) => <Badge variant=\"brand\">{String(v)}</Badge> },\n  { key: 'actions',header: '',       sortable: false, searchable: false,\n    renderCell: (_, row) => <Button size=\"xs\" variant=\"ghost\">Edit</Button> },\n];\n<DataTable columns={columns} data={users} rowKey=\"id\" sortable searchable pageSize={10} striped />"
+      ]
+    }
+  ]
+}

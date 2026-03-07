@@ -48,7 +48,7 @@ export const Divider: React.FC<DividerProps> = ({
   if (orientation === 'vertical') {
     return (
       <View
-        accessibilityRole="separator"
+        accessibilityRole={"separator" as any}
         style={[styles.vertical, { backgroundColor: lineColor }, style]}
       />
     );
@@ -57,7 +57,7 @@ export const Divider: React.FC<DividerProps> = ({
   if (label) {
     return (
       <View
-        accessibilityRole="separator"
+        accessibilityRole={"separator" as any}
         style={[styles.labelRow, { marginVertical: marginV }, style]}
       >
         {labelAlign !== 'left' && (
@@ -79,7 +79,7 @@ export const Divider: React.FC<DividerProps> = ({
 
   return (
     <View
-      accessibilityRole="separator"
+      accessibilityRole={"separator" as any}
       style={[
         styles.horizontal,
         { backgroundColor: lineColor, marginVertical: marginV },

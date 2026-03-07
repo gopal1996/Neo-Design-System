@@ -1,0 +1,15 @@
+src/
+.storybook/
+*.stories.tsx
+*.stories.ts
+*.test.tsx
+*.test.ts
+tsup.config.ts
+tailwind.config.ts
+postcss.config.*
+vite.config.*
+tsconfig.json
+.eslintrc*
+.prettierrc*
+storybook-static/
+node_modules/

@@ -2,12 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from './Typography';
 
 const meta: Meta<typeof Text> = {
-  title:     'Components/Typography',
+  title: 'Components/Typography',
   component: Text,
-  tags:      ['autodocs'],
+  tags: ['autodocs'],
   argTypes: {
-    variant:  { control: 'select', options: ['display','h1','h2','h3','h4','h5','body-lg','body','body-sm','caption','overline','mono'] },
-    color:    { control: 'select', options: ['primary','secondary','tertiary','brand','success','warning','error','info'] },
+    variant: { control: 'select', options: ['display', 'h1', 'h2', 'h3', 'h4', 'h5', 'body-lg', 'body', 'body-sm', 'caption', 'overline', 'mono'] },
+    color: { control: 'select', options: ['primary', 'secondary', 'tertiary', 'brand', 'success', 'warning', 'error', 'info'] },
     gradient: { control: 'boolean' },
     children: { control: 'text' },
   },
@@ -54,7 +54,7 @@ export const BodyVariants: Story = {
 export const Colors: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-      {(['primary','secondary','tertiary','brand','success','warning','error','info'] as const).map(c => (
+      {(['primary', 'secondary', 'tertiary', 'brand', 'success', 'warning', 'error', 'info'] as const).map(c => (
         <Text key={c} variant="body" color={c}>{c.charAt(0).toUpperCase() + c.slice(1)} — color variant</Text>
       ))}
     </div>
@@ -81,5 +81,5 @@ export const Overline: Story = {
 };
 
 export const Mono: Story = {
-  args: { variant: 'mono', children: 'const nexus = { palette: "violet" };' },
+  args: { variant: 'mono', children: 'const neo = { palette: "violet" };' },
 };

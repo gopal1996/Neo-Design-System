@@ -141,7 +141,6 @@ const styles = StyleSheet.create({
     fontSize:           14,
     fontWeight:         typography.fontWeight.medium,
     includeFontPadding: false,
-    whiteSpace:         'nowrap',
   },
   tabDisabled: { opacity: 0.4 },
   badge: {

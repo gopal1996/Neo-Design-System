@@ -21,16 +21,16 @@ const LockIcon = () => (
 );
 
 const meta: Meta<typeof Input> = {
-  title:     'Components/Input',
+  title: 'Components/Input',
   component: Input,
-  tags:      ['autodocs'],
+  tags: ['autodocs'],
   argTypes: {
-    size:     { control: 'select', options: ['sm', 'md', 'lg'] },
-    label:    { control: 'text' },
-    hint:     { control: 'text' },
-    error:    { control: 'text' },
+    size: { control: 'select', options: ['sm', 'md', 'lg'] },
+    label: { control: 'text' },
+    hint: { control: 'text' },
+    error: { control: 'text' },
     disabled: { control: 'boolean' },
-    fullWidth:{ control: 'boolean' },
+    fullWidth: { control: 'boolean' },
   },
   args: { placeholder: 'Placeholder text', size: 'md' },
   decorators: [Story => <div style={{ width: 320 }}><Story /></div>],
@@ -59,10 +59,10 @@ export const WithIcons: Story = {
 
 export const WithAddon: Story = {
   args: {
-    label:      'Website',
-    addonLeft:  'https://',
+    label: 'Website',
+    addonLeft: 'https://',
     addonRight: '.com',
-    placeholder:'yoursite',
+    placeholder: 'yoursite',
   },
 };
 
@@ -71,13 +71,13 @@ export const Sizes: Story = {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <Input size="sm" placeholder="Small input" iconLeft={<MailIcon />} />
       <Input size="md" placeholder="Medium input" iconLeft={<MailIcon />} />
-      <Input size="lg" placeholder="Large input"  iconLeft={<MailIcon />} />
+      <Input size="lg" placeholder="Large input" iconLeft={<MailIcon />} />
     </div>
   ),
 };
 
 export const Disabled: Story = {
-  args: { label: 'Email', value: 'locked@nexus.io', disabled: true },
+  args: { label: 'Email', value: 'locked@neo.io', disabled: true },
 };
 
 export const PasswordField: Story = {

@@ -9,39 +9,39 @@ import { Button } from '../Button/Button';
 // ─── Sample data ──────────────────────────────────────────────
 
 type User = {
-  id:       number;
-  name:     string;
-  email:    string;
-  role:     string;
-  status:   'active' | 'inactive' | 'pending';
-  plan:     'free' | 'pro' | 'enterprise';
-  mrr:      number;
-  joined:   string;
+  id: number;
+  name: string;
+  email: string;
+  role: string;
+  status: 'active' | 'inactive' | 'pending';
+  plan: 'free' | 'pro' | 'enterprise';
+  mrr: number;
+  joined: string;
 };
 
 const users: User[] = [
-  { id:1,  name:'Alice Tran',    email:'alice@nexus.io',   role:'Admin',  status:'active',   plan:'enterprise', mrr:499, joined:'2024-01-12' },
-  { id:2,  name:'Bob Smith',     email:'bob@company.co',   role:'Editor', status:'active',   plan:'pro',        mrr:49,  joined:'2024-02-08' },
-  { id:3,  name:'Carol Wu',      email:'carol@startup.ai', role:'Viewer', status:'pending',  plan:'free',       mrr:0,   joined:'2024-03-20' },
-  { id:4,  name:'David Park',    email:'david@acme.com',   role:'Admin',  status:'active',   plan:'enterprise', mrr:499, joined:'2024-01-05' },
-  { id:5,  name:'Eva Müller',    email:'eva@design.eu',    role:'Editor', status:'inactive', plan:'pro',        mrr:49,  joined:'2024-04-17' },
-  { id:6,  name:'Frank Diaz',    email:'frank@dev.io',     role:'Viewer', status:'active',   plan:'free',       mrr:0,   joined:'2024-02-28' },
-  { id:7,  name:'Grace Li',      email:'grace@saas.com',   role:'Editor', status:'active',   plan:'pro',        mrr:49,  joined:'2024-05-01' },
-  { id:8,  name:'Hiro Tanaka',   email:'hiro@corp.jp',     role:'Admin',  status:'active',   plan:'enterprise', mrr:499, joined:'2024-03-10' },
-  { id:9,  name:'Irene Santos',  email:'irene@biz.br',     role:'Viewer', status:'pending',  plan:'free',       mrr:0,   joined:'2024-06-02' },
-  { id:10, name:'James Cohen',   email:'james@fin.us',     role:'Editor', status:'active',   plan:'pro',        mrr:49,  joined:'2024-04-25' },
-  { id:11, name:'Kim Nguyen',    email:'kim@agency.vn',    role:'Viewer', status:'active',   plan:'free',       mrr:0,   joined:'2024-05-18' },
-  { id:12, name:'Lena Brandt',   email:'lena@tech.de',     role:'Admin',  status:'inactive', plan:'enterprise', mrr:499, joined:'2024-01-30' },
+  { id: 1, name: 'Alice Tran', email: 'alice@neo.io', role: 'Admin', status: 'active', plan: 'enterprise', mrr: 499, joined: '2024-01-12' },
+  { id: 2, name: 'Bob Smith', email: 'bob@company.co', role: 'Editor', status: 'active', plan: 'pro', mrr: 49, joined: '2024-02-08' },
+  { id: 3, name: 'Carol Wu', email: 'carol@startup.ai', role: 'Viewer', status: 'pending', plan: 'free', mrr: 0, joined: '2024-03-20' },
+  { id: 4, name: 'David Park', email: 'david@acme.com', role: 'Admin', status: 'active', plan: 'enterprise', mrr: 499, joined: '2024-01-05' },
+  { id: 5, name: 'Eva Müller', email: 'eva@design.eu', role: 'Editor', status: 'inactive', plan: 'pro', mrr: 49, joined: '2024-04-17' },
+  { id: 6, name: 'Frank Diaz', email: 'frank@dev.io', role: 'Viewer', status: 'active', plan: 'free', mrr: 0, joined: '2024-02-28' },
+  { id: 7, name: 'Grace Li', email: 'grace@saas.com', role: 'Editor', status: 'active', plan: 'pro', mrr: 49, joined: '2024-05-01' },
+  { id: 8, name: 'Hiro Tanaka', email: 'hiro@corp.jp', role: 'Admin', status: 'active', plan: 'enterprise', mrr: 499, joined: '2024-03-10' },
+  { id: 9, name: 'Irene Santos', email: 'irene@biz.br', role: 'Viewer', status: 'pending', plan: 'free', mrr: 0, joined: '2024-06-02' },
+  { id: 10, name: 'James Cohen', email: 'james@fin.us', role: 'Editor', status: 'active', plan: 'pro', mrr: 49, joined: '2024-04-25' },
+  { id: 11, name: 'Kim Nguyen', email: 'kim@agency.vn', role: 'Viewer', status: 'active', plan: 'free', mrr: 0, joined: '2024-05-18' },
+  { id: 12, name: 'Lena Brandt', email: 'lena@tech.de', role: 'Admin', status: 'inactive', plan: 'enterprise', mrr: 499, joined: '2024-01-30' },
 ];
 
-const statusVariant: Record<User['status'], 'success'|'warning'|'error'> = {
-  active:   'success',
-  pending:  'warning',
+const statusVariant: Record<User['status'], 'success' | 'warning' | 'error'> = {
+  active: 'success',
+  pending: 'warning',
   inactive: 'error',
 };
-const planVariant: Record<User['plan'], 'default'|'brand'|'info'> = {
-  free:       'default',
-  pro:        'brand',
+const planVariant: Record<User['plan'], 'default' | 'brand' | 'info'> = {
+  free: 'default',
+  pro: 'brand',
   enterprise: 'info',
 };
 
@@ -52,11 +52,11 @@ const columns: ColumnDef<User>[] = [
     sortable: true,
     minWidth: 200,
     renderCell: (_, row) => (
-      <div style={{ display:'flex', alignItems:'center', gap:10 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         <Avatar name={row.name as string} size="sm" />
         <div>
-          <p style={{ margin:0, fontWeight:500, fontSize:'0.875rem', color:'var(--text-primary)' }}>{row.name as string}</p>
-          <p style={{ margin:0, fontSize:'0.75rem', color:'var(--text-tertiary)' }}>{row.email as string}</p>
+          <p style={{ margin: 0, fontWeight: 500, fontSize: '0.875rem', color: 'var(--text-primary)' }}>{row.name as string}</p>
+          <p style={{ margin: 0, fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>{row.email as string}</p>
         </div>
       </div>
     ),
@@ -88,7 +88,7 @@ const columns: ColumnDef<User>[] = [
     sortable: true,
     align: 'right',
     renderCell: val => (
-      <span style={{ fontVariantNumeric:'tabular-nums', fontWeight:500, color: (val as number) > 0 ? 'var(--text-primary)' : 'var(--text-tertiary)' }}>
+      <span style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 500, color: (val as number) > 0 ? 'var(--text-primary)' : 'var(--text-tertiary)' }}>
         {(val as number) > 0 ? `$${val}` : '—'}
       </span>
     ),
@@ -101,7 +101,7 @@ const columns: ColumnDef<User>[] = [
     searchable: false,
     align: 'right',
     renderCell: (_, row) => (
-      <div style={{ display:'flex', justifyContent:'flex-end', gap:6 }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 6 }}>
         <Button size="xs" variant="ghost">Edit</Button>
         <Button size="xs" variant="danger">Remove</Button>
       </div>
@@ -113,7 +113,7 @@ const columns: ColumnDef<User>[] = [
 
 const meta: Meta = {
   title: 'Components/Table',
-  tags:  ['autodocs'],
+  tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
 };
 export default meta;
@@ -143,7 +143,7 @@ export const Sortable: Story = {
   name: 'Sort Only (no search)',
   render: () => (
     <div style={{ padding: 24 }}>
-      <Table columns={columns.slice(0,6)} data={users} rowKey="id" sortable />
+      <Table columns={columns.slice(0, 6)} data={users} rowKey="id" sortable />
     </div>
   ),
 };
@@ -153,7 +153,7 @@ export const Searchable: Story = {
   render: () => (
     <div style={{ padding: 24 }}>
       <Table
-        columns={columns.slice(0,6)}
+        columns={columns.slice(0, 6)}
         data={users}
         rowKey="id"
         searchable
@@ -241,11 +241,11 @@ export const EmptyState: Story = {
 export const ControlledSort: Story = {
   render: () => {
     const [sortKey, setSortKey] = useState<string>('mrr');
-    const [sortDir, setSortDir] = useState<'asc'|'desc'|null>('desc');
+    const [sortDir, setSortDir] = useState<'asc' | 'desc' | null>('desc');
     return (
       <div style={{ padding: 24 }}>
-        <p style={{ margin:'0 0 12px', fontSize:'0.8125rem', color:'var(--text-tertiary)' }}>
-          Controlled sort: <code style={{ color:'var(--violet-300)' }}>{sortKey} {sortDir}</code>
+        <p style={{ margin: '0 0 12px', fontSize: '0.8125rem', color: 'var(--text-tertiary)' }}>
+          Controlled sort: <code style={{ color: 'var(--violet-300)' }}>{sortKey} {sortDir}</code>
         </p>
         <Table
           columns={columns.slice(0, 6)}
@@ -268,7 +268,7 @@ export const ClickableRows: Story = {
       <div style={{ padding: 24 }}>
         {selected !== null && (
           <p style={{ marginBottom: 12, fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-            Clicked: <strong style={{ color:'var(--violet-300)' }}>{users.find(u=>u.id===selected)?.name}</strong>
+            Clicked: <strong style={{ color: 'var(--violet-300)' }}>{users.find(u => u.id === selected)?.name}</strong>
           </p>
         )}
         <Table
@@ -291,8 +291,8 @@ export const CustomEmptyState: Story = {
         data={[]}
         rowKey="id"
         emptyState={
-          <div style={{ textAlign:'center', padding:'32px 0' }}>
-            <p style={{ color:'var(--text-tertiary)', fontWeight:600, marginBottom:8 }}>No users yet</p>
+          <div style={{ textAlign: 'center', padding: '32px 0' }}>
+            <p style={{ color: 'var(--text-tertiary)', fontWeight: 600, marginBottom: 8 }}>No users yet</p>
             <Button variant="primary" size="sm">Invite your first member</Button>
           </div>
         }

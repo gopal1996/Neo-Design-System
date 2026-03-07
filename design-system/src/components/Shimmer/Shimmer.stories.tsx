@@ -4,7 +4,7 @@ import { Shimmer, ShimmerText, ShimmerAvatar, ShimmerCard, ShimmerTable, Shimmer
 
 const meta: Meta = {
   title: 'Components/Shimmer',
-  tags:  ['autodocs'],
+  tags: ['autodocs'],
   parameters: { layout: 'padded' },
 };
 export default meta;
@@ -16,12 +16,12 @@ export const Base: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 320 }}>
       <Shimmer width="100%" height={16} radius="md" />
-      <Shimmer width="75%"  height={16} radius="md" />
-      <Shimmer width="50%"  height={16} radius="md" />
+      <Shimmer width="75%" height={16} radius="md" />
+      <Shimmer width="50%" height={16} radius="md" />
       <div style={{ display: 'flex', gap: 12, marginTop: 4 }}>
-        <Shimmer width={40}   height={40}  radius="full" />
-        <Shimmer width={80}   height={40}  radius="lg" />
-        <Shimmer width={120}  height={40}  radius="xl" />
+        <Shimmer width={40} height={40} radius="full" />
+        <Shimmer width={80} height={40} radius="lg" />
+        <Shimmer width={120} height={40} radius="xl" />
       </div>
     </div>
   ),
@@ -107,10 +107,10 @@ export const LoadingTransition: Story = {
             borderRadius: 16, padding: 16, animation: 'fadeIn 300ms ease',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-              <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'linear-gradient(135deg,#6D28D9,#8B5CF6)', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:700, color:'#fff', fontSize:'0.875rem' }}>AK</div>
+              <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'linear-gradient(135deg,#6D28D9,#8B5CF6)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: '#fff', fontSize: '0.875rem' }}>AK</div>
               <div>
                 <p style={{ margin: 0, fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.9375rem' }}>Alex Kim</p>
-                <p style={{ margin: 0, color: 'var(--text-tertiary)', fontSize: '0.8125rem' }}>alex@nexus.io</p>
+                <p style={{ margin: 0, color: 'var(--text-tertiary)', fontSize: '0.8125rem' }}>alex@neo.io</p>
               </div>
             </div>
             <p style={{ margin: '0 0 16px', color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.6 }}>
@@ -133,8 +133,8 @@ export const DashboardSkeleton: Story = {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
       {/* metric cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 16 }}>
-        {Array.from({length:4}).map((_,i) => (
-          <div key={i} style={{ background:'var(--bg-elevated)', border:'1px solid var(--border)', borderRadius:12, padding:16, display:'flex', flexDirection:'column', gap:10 }}>
+        {Array.from({ length: 4 }).map((_, i) => (
+          <div key={i} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', borderRadius: 12, padding: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
             <Shimmer width="40%" height={12} radius="md" />
             <Shimmer width="60%" height={28} radius="lg" />
             <Shimmer width="35%" height={12} radius="md" />
@@ -143,11 +143,11 @@ export const DashboardSkeleton: Story = {
       </div>
       {/* main content */}
       <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 16 }}>
-        <div style={{ background:'var(--bg-elevated)', border:'1px solid var(--border)', borderRadius:12, padding:16, display:'flex', flexDirection:'column', gap:16 }}>
+        <div style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', borderRadius: 12, padding: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
           <Shimmer width="30%" height={16} radius="md" />
           <ShimmerTable rows={5} cols={4} />
         </div>
-        <div style={{ background:'var(--bg-elevated)', border:'1px solid var(--border)', borderRadius:12, padding:16, display:'flex', flexDirection:'column', gap:16 }}>
+        <div style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', borderRadius: 12, padding: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
           <Shimmer width="40%" height={16} radius="md" />
           <ShimmerList items={5} avatar />
         </div>

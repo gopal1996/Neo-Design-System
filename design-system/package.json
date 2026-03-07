@@ -1,20 +1,39 @@
 {
-  "name": "@nexus/web",
+  "name": "@neo-design-library/web",
   "version": "1.0.0",
-  "description": "Neo Design System — Black & Violet · Web & Mobile · Modern SaaS",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "description": "Neo Design System — Black & Violet · Web components for React",
   "license": "MIT",
-  "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/styles.css"
   },
-  "sideEffects": [
-    "**/*.css"
+  "files": [
+    "dist"
   ],
+  "sideEffects": [
+    "dist/styles.css"
+  ],
+  "scripts": {
+    "build": "tsup && tailwindcss -i src/styles/globals.css -o dist/styles.css --minify",
+    "build:watch": "tsup --watch",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "typecheck": "tsc --noEmit"
+  },
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^8.6.18",
@@ -24,17 +43,14 @@
     "@storybook/react-vite": "^8.6.18",
     "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "storybook": "^8.6.18",
+    "tailwindcss": "^3.4.19",
+    "tsup": "^8.3.5",
     "typescript": "^5.9.3",
     "vite": "^6.4.1"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.4.27",
-    "clsx": "^2.1.1",
-    "postcss": "^8.5.8",
-    "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^3.4.19"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://nexus.design/registry/v1",
+  "$schema": "https://neo.design/registry/v1",
   "name": "Neo Design System",
   "version": "1.0.0",
   "components": [
@@ -7,97 +7,361 @@
       "name": "Button",
       "description": "Primary interactive element for triggering actions. Supports gradient primary, ghost, danger, and success styles with optional loading and icon slots.",
       "filePath": "src/components/Button/Button.tsx",
-      "variants": ["primary", "secondary", "ghost", "danger", "success"],
+      "variants": [
+        "primary",
+        "secondary",
+        "ghost",
+        "danger",
+        "success"
+      ],
       "props": [
-        { "name": "variant", "type": "'primary' | 'secondary' | 'ghost' | 'danger' | 'success'", "default": "'primary'", "required": false, "description": "Visual style of the button" },
-        { "name": "size", "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "default": "'md'", "required": false, "description": "Height and font size of the button" },
-        { "name": "loading", "type": "boolean", "default": "false", "required": false, "description": "Shows a spinner and disables interaction" },
-        { "name": "iconLeft", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Icon rendered to the left of the label" },
-        { "name": "iconRight", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Icon rendered to the right of the label" },
-        { "name": "fullWidth", "type": "boolean", "default": "false", "required": false, "description": "Stretches button to fill container width" },
-        { "name": "disabled", "type": "boolean", "default": "false", "required": false, "description": "Disables button interaction" },
-        { "name": "onClick", "type": "React.MouseEventHandler<HTMLButtonElement>", "default": "undefined", "required": false, "description": "Click handler" }
+        {
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'ghost' | 'danger' | 'success'",
+          "default": "'primary'",
+          "required": false,
+          "description": "Visual style of the button"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "required": false,
+          "description": "Height and font size of the button"
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Shows a spinner and disables interaction"
+        },
+        {
+          "name": "iconLeft",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Icon rendered to the left of the label"
+        },
+        {
+          "name": "iconRight",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Icon rendered to the right of the label"
+        },
+        {
+          "name": "fullWidth",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Stretches button to fill container width"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Disables button interaction"
+        },
+        {
+          "name": "onClick",
+          "type": "React.MouseEventHandler<HTMLButtonElement>",
+          "default": "undefined",
+          "required": false,
+          "description": "Click handler"
+        }
       ],
       "examples": [
         "<Button variant=\"primary\" size=\"md\">Save changes</Button>",
         "<Button variant=\"ghost\" iconLeft={<Icon />}>Export</Button>",
         "<Button variant=\"danger\" loading={isDeleting}>Delete</Button>"
       ],
-      "tags": ["button", "action", "cta", "interactive", "form", "submit"]
+      "tags": [
+        "button",
+        "action",
+        "cta",
+        "interactive",
+        "form",
+        "submit"
+      ]
     },
     {
       "name": "Input",
       "description": "Text input field with optional label, hint, error message, icons, and left/right addons. Uses React.forwardRef.",
       "filePath": "src/components/Input/Input.tsx",
-      "variants": ["default", "error", "disabled"],
+      "variants": [
+        "default",
+        "error",
+        "disabled"
+      ],
       "props": [
-        { "name": "label", "type": "string", "default": "undefined", "required": false, "description": "Label rendered above the input" },
-        { "name": "hint", "type": "string", "default": "undefined", "required": false, "description": "Helper text shown below the input when no error" },
-        { "name": "error", "type": "string", "default": "undefined", "required": false, "description": "Error message that replaces the hint and applies error styling" },
-        { "name": "size", "type": "'sm' | 'md' | 'lg'", "default": "'md'", "required": false, "description": "Height and font size of the input" },
-        { "name": "iconLeft", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Icon rendered inside the left edge of the input" },
-        { "name": "iconRight", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Icon rendered inside the right edge of the input" },
-        { "name": "addonLeft", "type": "string", "default": "undefined", "required": false, "description": "Static text prefix attached to the left of the input (e.g. 'https://')" },
-        { "name": "addonRight", "type": "string", "default": "undefined", "required": false, "description": "Static text suffix attached to the right of the input" },
-        { "name": "fullWidth", "type": "boolean", "default": "false", "required": false, "description": "Stretches input wrapper to fill container" },
-        { "name": "disabled", "type": "boolean", "default": "false", "required": false, "description": "Disables the input" },
-        { "name": "placeholder", "type": "string", "default": "undefined", "required": false, "description": "Placeholder text" }
+        {
+          "name": "label",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Label rendered above the input"
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Helper text shown below the input when no error"
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Error message that replaces the hint and applies error styling"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "required": false,
+          "description": "Height and font size of the input"
+        },
+        {
+          "name": "iconLeft",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Icon rendered inside the left edge of the input"
+        },
+        {
+          "name": "iconRight",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Icon rendered inside the right edge of the input"
+        },
+        {
+          "name": "addonLeft",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Static text prefix attached to the left of the input (e.g. 'https://')"
+        },
+        {
+          "name": "addonRight",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Static text suffix attached to the right of the input"
+        },
+        {
+          "name": "fullWidth",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Stretches input wrapper to fill container"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Disables the input"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Placeholder text"
+        }
       ],
       "examples": [
         "<Input label=\"Email\" placeholder=\"you@example.com\" hint=\"We'll never share it\" />",
         "<Input label=\"URL\" addonLeft=\"https://\" placeholder=\"example.com\" />",
         "<Input label=\"Password\" error=\"Password is required\" type=\"password\" />"
       ],
-      "tags": ["input", "text", "field", "form", "label", "error", "hint"]
+      "tags": [
+        "input",
+        "text",
+        "field",
+        "form",
+        "label",
+        "error",
+        "hint"
+      ]
     },
     {
       "name": "Badge",
       "description": "Compact label for status, category, or count. Supports semantic color variants and an optional leading dot indicator.",
       "filePath": "src/components/Badge/Badge.tsx",
-      "variants": ["default", "brand", "success", "warning", "error", "info", "outline"],
+      "variants": [
+        "default",
+        "brand",
+        "success",
+        "warning",
+        "error",
+        "info",
+        "outline"
+      ],
       "props": [
-        { "name": "variant", "type": "'default' | 'brand' | 'success' | 'warning' | 'error' | 'info' | 'outline'", "default": "'default'", "required": false, "description": "Color scheme of the badge" },
-        { "name": "size", "type": "'sm' | 'md' | 'lg'", "default": "'md'", "required": false, "description": "Height and font size of the badge" },
-        { "name": "dot", "type": "boolean", "default": "false", "required": false, "description": "Shows a small colored circle before the label" },
-        { "name": "children", "type": "React.ReactNode", "default": null, "required": true, "description": "Badge label content" }
+        {
+          "name": "variant",
+          "type": "'default' | 'brand' | 'success' | 'warning' | 'error' | 'info' | 'outline'",
+          "default": "'default'",
+          "required": false,
+          "description": "Color scheme of the badge"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "required": false,
+          "description": "Height and font size of the badge"
+        },
+        {
+          "name": "dot",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Shows a small colored circle before the label"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "default": null,
+          "required": true,
+          "description": "Badge label content"
+        }
       ],
       "examples": [
         "<Badge variant=\"brand\">New</Badge>",
         "<Badge variant=\"success\" dot>Active</Badge>",
         "<Badge variant=\"error\" size=\"sm\">Failed</Badge>"
       ],
-      "tags": ["badge", "tag", "label", "status", "chip", "pill", "indicator"]
+      "tags": [
+        "badge",
+        "tag",
+        "label",
+        "status",
+        "chip",
+        "pill",
+        "indicator"
+      ]
     },
     {
       "name": "Card",
       "description": "Surface container for grouping related content. Supports variants, padding control, and interactive (clickable) mode. Includes CardHeader, CardBody, and CardFooter sub-components.",
       "filePath": "src/components/Card/Card.tsx",
-      "variants": ["default", "elevated", "brand", "flat"],
+      "variants": [
+        "default",
+        "elevated",
+        "brand",
+        "flat"
+      ],
       "props": [
-        { "name": "variant", "type": "'default' | 'elevated' | 'brand' | 'flat'", "default": "'default'", "required": false, "description": "Background and shadow style of the card" },
-        { "name": "interactive", "type": "boolean", "default": "false", "required": false, "description": "Adds hover lift effect and cursor pointer for clickable cards" },
-        { "name": "padding", "type": "'none' | 'sm' | 'md' | 'lg' | 'xl'", "default": "'md'", "required": false, "description": "Internal padding of the card" },
-        { "name": "onClick", "type": "React.MouseEventHandler<HTMLDivElement>", "default": "undefined", "required": false, "description": "Click handler for interactive cards" },
-        { "name": "children", "type": "React.ReactNode", "default": null, "required": true, "description": "Card content" }
+        {
+          "name": "variant",
+          "type": "'default' | 'elevated' | 'brand' | 'flat'",
+          "default": "'default'",
+          "required": false,
+          "description": "Background and shadow style of the card"
+        },
+        {
+          "name": "interactive",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Adds hover lift effect and cursor pointer for clickable cards"
+        },
+        {
+          "name": "padding",
+          "type": "'none' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "required": false,
+          "description": "Internal padding of the card"
+        },
+        {
+          "name": "onClick",
+          "type": "React.MouseEventHandler<HTMLDivElement>",
+          "default": "undefined",
+          "required": false,
+          "description": "Click handler for interactive cards"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "default": null,
+          "required": true,
+          "description": "Card content"
+        }
       ],
       "examples": [
         "<Card variant=\"default\" padding=\"lg\"><p>Content</p></Card>",
         "<Card variant=\"brand\" interactive onClick={handleClick}><CardHeader>Title</CardHeader><CardBody>Body</CardBody></Card>",
         "<Card variant=\"elevated\"><CardHeader>Header</CardHeader><CardBody>Body</CardBody><CardFooter><Button>Action</Button></CardFooter></Card>"
       ],
-      "tags": ["card", "panel", "surface", "container", "tile", "layout"]
+      "tags": [
+        "card",
+        "panel",
+        "surface",
+        "container",
+        "tile",
+        "layout"
+      ]
     },
     {
       "name": "Text",
       "description": "Typography component that maps semantic variants (display, h1–h5, body, caption, overline, mono) to correct HTML tags with design system font styles. Supports gradient text.",
       "filePath": "src/components/Typography/Typography.tsx",
-      "variants": ["display", "h1", "h2", "h3", "h4", "h5", "body-lg", "body", "body-sm", "caption", "overline", "mono"],
+      "variants": [
+        "display",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "body-lg",
+        "body",
+        "body-sm",
+        "caption",
+        "overline",
+        "mono"
+      ],
       "props": [
-        { "name": "variant", "type": "'display' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'body-lg' | 'body' | 'body-sm' | 'caption' | 'overline' | 'mono'", "default": "'body'", "required": false, "description": "Typography scale variant — controls size, weight, and line-height" },
-        { "name": "color", "type": "'primary' | 'secondary' | 'tertiary' | 'brand' | 'success' | 'warning' | 'error' | 'info'", "default": "'primary'", "required": false, "description": "Semantic text color token" },
-        { "name": "as", "type": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div' | 'label'", "default": "undefined", "required": false, "description": "Override the rendered HTML tag" },
-        { "name": "gradient", "type": "boolean", "default": "false", "required": false, "description": "Applies violet gradient fill to the text" },
-        { "name": "children", "type": "React.ReactNode", "default": null, "required": true, "description": "Text content" }
+        {
+          "name": "variant",
+          "type": "'display' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'body-lg' | 'body' | 'body-sm' | 'caption' | 'overline' | 'mono'",
+          "default": "'body'",
+          "required": false,
+          "description": "Typography scale variant — controls size, weight, and line-height"
+        },
+        {
+          "name": "color",
+          "type": "'primary' | 'secondary' | 'tertiary' | 'brand' | 'success' | 'warning' | 'error' | 'info'",
+          "default": "'primary'",
+          "required": false,
+          "description": "Semantic text color token"
+        },
+        {
+          "name": "as",
+          "type": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div' | 'label'",
+          "default": "undefined",
+          "required": false,
+          "description": "Override the rendered HTML tag"
+        },
+        {
+          "name": "gradient",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Applies violet gradient fill to the text"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "default": null,
+          "required": true,
+          "description": "Text content"
+        }
       ],
       "examples": [
         "<Text variant=\"h1\" gradient>Build something great</Text>",
@@ -105,255 +369,906 @@
         "<Text variant=\"overline\" color=\"brand\">Section label</Text>",
         "<Text variant=\"caption\" color=\"tertiary\">Last updated 2 hours ago</Text>"
       ],
-      "tags": ["text", "typography", "heading", "body", "caption", "label", "font", "gradient"]
+      "tags": [
+        "text",
+        "typography",
+        "heading",
+        "body",
+        "caption",
+        "label",
+        "font",
+        "gradient"
+      ]
     },
     {
       "name": "Avatar",
       "description": "Circular user avatar that renders an image, initials with a violet-hued background, or a fallback icon. Supports status indicators and a group stacking layout via AvatarGroup.",
       "filePath": "src/components/Avatar/Avatar.tsx",
-      "variants": ["image", "initials", "fallback", "with-status"],
+      "variants": [
+        "image",
+        "initials",
+        "fallback",
+        "with-status"
+      ],
       "props": [
-        { "name": "src", "type": "string", "default": "undefined", "required": false, "description": "URL of the avatar image" },
-        { "name": "alt", "type": "string", "default": "undefined", "required": false, "description": "Alt text for the image" },
-        { "name": "name", "type": "string", "default": "undefined", "required": false, "description": "Full name used to generate initials and background color when no image is provided" },
-        { "name": "size", "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'", "default": "'md'", "required": false, "description": "Diameter of the avatar" },
-        { "name": "status", "type": "'online' | 'offline' | 'busy' | 'away'", "default": "undefined", "required": false, "description": "Presence indicator dot overlaid on the avatar" }
+        {
+          "name": "src",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "URL of the avatar image"
+        },
+        {
+          "name": "alt",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Alt text for the image"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Full name used to generate initials and background color when no image is provided"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'",
+          "default": "'md'",
+          "required": false,
+          "description": "Diameter of the avatar"
+        },
+        {
+          "name": "status",
+          "type": "'online' | 'offline' | 'busy' | 'away'",
+          "default": "undefined",
+          "required": false,
+          "description": "Presence indicator dot overlaid on the avatar"
+        }
       ],
       "examples": [
         "<Avatar name=\"Jane Doe\" size=\"md\" status=\"online\" />",
         "<Avatar src=\"/avatars/john.jpg\" alt=\"John\" size=\"lg\" />",
         "<AvatarGroup avatars={users} max={4} size=\"sm\" />"
       ],
-      "tags": ["avatar", "user", "profile", "image", "initials", "group", "presence", "status"]
+      "tags": [
+        "avatar",
+        "user",
+        "profile",
+        "image",
+        "initials",
+        "group",
+        "presence",
+        "status"
+      ]
     },
     {
       "name": "AvatarGroup",
       "description": "Stacks multiple Avatar components with overlap and shows a +N overflow count when the list exceeds the max.",
       "filePath": "src/components/Avatar/Avatar.tsx",
-      "variants": ["default"],
+      "variants": [
+        "default"
+      ],
       "props": [
-        { "name": "avatars", "type": "AvatarProps[]", "default": null, "required": true, "description": "Array of avatar prop objects to render" },
-        { "name": "max", "type": "number", "default": "4", "required": false, "description": "Maximum number of avatars to show before the overflow count" },
-        { "name": "size", "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'", "default": "'md'", "required": false, "description": "Size applied to all avatars in the group" }
+        {
+          "name": "avatars",
+          "type": "AvatarProps[]",
+          "default": null,
+          "required": true,
+          "description": "Array of avatar prop objects to render"
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "default": "4",
+          "required": false,
+          "description": "Maximum number of avatars to show before the overflow count"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'",
+          "default": "'md'",
+          "required": false,
+          "description": "Size applied to all avatars in the group"
+        }
       ],
       "examples": [
         "<AvatarGroup avatars={[{ name: 'Alice' }, { name: 'Bob' }, { src: '/c.jpg' }]} max={3} />"
       ],
-      "tags": ["avatar", "group", "stack", "users", "team", "overlap"]
+      "tags": [
+        "avatar",
+        "group",
+        "stack",
+        "users",
+        "team",
+        "overlap"
+      ]
     },
     {
       "name": "Switch",
       "description": "Toggle control for binary on/off states. Supports controlled and uncontrolled modes, label, hint text, and three sizes.",
       "filePath": "src/components/Switch/Switch.tsx",
-      "variants": ["checked", "unchecked", "disabled"],
+      "variants": [
+        "checked",
+        "unchecked",
+        "disabled"
+      ],
       "props": [
-        { "name": "checked", "type": "boolean", "default": "undefined", "required": false, "description": "Controlled checked state" },
-        { "name": "defaultChecked", "type": "boolean", "default": "undefined", "required": false, "description": "Initial checked state for uncontrolled usage" },
-        { "name": "onChange", "type": "(checked: boolean) => void", "default": "undefined", "required": false, "description": "Callback fired when the switch is toggled" },
-        { "name": "disabled", "type": "boolean", "default": "false", "required": false, "description": "Disables the switch" },
-        { "name": "size", "type": "'sm' | 'md' | 'lg'", "default": "'md'", "required": false, "description": "Physical size of the toggle track" },
-        { "name": "label", "type": "string", "default": "undefined", "required": false, "description": "Text label rendered beside the switch" },
-        { "name": "hint", "type": "string", "default": "undefined", "required": false, "description": "Helper text below the switch" }
+        {
+          "name": "checked",
+          "type": "boolean",
+          "default": "undefined",
+          "required": false,
+          "description": "Controlled checked state"
+        },
+        {
+          "name": "defaultChecked",
+          "type": "boolean",
+          "default": "undefined",
+          "required": false,
+          "description": "Initial checked state for uncontrolled usage"
+        },
+        {
+          "name": "onChange",
+          "type": "(checked: boolean) => void",
+          "default": "undefined",
+          "required": false,
+          "description": "Callback fired when the switch is toggled"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Disables the switch"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "required": false,
+          "description": "Physical size of the toggle track"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Text label rendered beside the switch"
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Helper text below the switch"
+        }
       ],
       "examples": [
         "<Switch checked={enabled} onChange={setEnabled} label=\"Enable notifications\" />",
         "<Switch size=\"sm\" label=\"Dark mode\" hint=\"Applies to your account\" />",
         "<Switch checked={true} disabled label=\"Always on\" />"
       ],
-      "tags": ["switch", "toggle", "checkbox", "boolean", "form", "settings"]
+      "tags": [
+        "switch",
+        "toggle",
+        "checkbox",
+        "boolean",
+        "form",
+        "settings"
+      ]
     },
     {
       "name": "Tabs",
       "description": "Tab navigation with three visual variants. Supports icons, badge counts, disabled tabs, and controlled/uncontrolled active state. Pair with TabPanel for content panels.",
       "filePath": "src/components/Tabs/Tabs.tsx",
-      "variants": ["line", "pill", "enclosed"],
+      "variants": [
+        "line",
+        "pill",
+        "enclosed"
+      ],
       "props": [
-        { "name": "items", "type": "TabItem[]", "default": null, "required": true, "description": "Array of tab definitions: { id, label, icon?, badge?, disabled? }" },
-        { "name": "defaultTab", "type": "string", "default": "items[0].id", "required": false, "description": "Initial active tab id for uncontrolled usage" },
-        { "name": "active", "type": "string", "default": "undefined", "required": false, "description": "Controlled active tab id" },
-        { "name": "onChange", "type": "(id: string) => void", "default": "undefined", "required": false, "description": "Callback fired when the active tab changes" },
-        { "name": "variant", "type": "'line' | 'pill' | 'enclosed'", "default": "'line'", "required": false, "description": "Visual style of the tab bar" },
-        { "name": "children", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "TabPanel components rendered below the tab bar" }
+        {
+          "name": "items",
+          "type": "TabItem[]",
+          "default": null,
+          "required": true,
+          "description": "Array of tab definitions: { id, label, icon?, badge?, disabled? }"
+        },
+        {
+          "name": "defaultTab",
+          "type": "string",
+          "default": "items[0].id",
+          "required": false,
+          "description": "Initial active tab id for uncontrolled usage"
+        },
+        {
+          "name": "active",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Controlled active tab id"
+        },
+        {
+          "name": "onChange",
+          "type": "(id: string) => void",
+          "default": "undefined",
+          "required": false,
+          "description": "Callback fired when the active tab changes"
+        },
+        {
+          "name": "variant",
+          "type": "'line' | 'pill' | 'enclosed'",
+          "default": "'line'",
+          "required": false,
+          "description": "Visual style of the tab bar"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "TabPanel components rendered below the tab bar"
+        }
       ],
       "examples": [
         "<Tabs items={[{ id: 'overview', label: 'Overview' }, { id: 'settings', label: 'Settings' }]} variant=\"pill\" onChange={setTab}><TabPanel id=\"overview\">...</TabPanel></Tabs>",
         "<Tabs items={tabs} variant=\"line\" active={activeTab} onChange={setActiveTab} />"
       ],
-      "tags": ["tabs", "navigation", "tabbar", "panel", "segmented", "filter"]
+      "tags": [
+        "tabs",
+        "navigation",
+        "tabbar",
+        "panel",
+        "segmented",
+        "filter"
+      ]
     },
     {
       "name": "TabPanel",
       "description": "Content panel that renders only when its id matches the active tab in a parent Tabs component.",
       "filePath": "src/components/Tabs/Tabs.tsx",
-      "variants": ["default"],
+      "variants": [
+        "default"
+      ],
       "props": [
-        { "name": "id", "type": "string", "default": null, "required": true, "description": "Must match a TabItem id in the parent Tabs" },
-        { "name": "children", "type": "React.ReactNode", "default": null, "required": true, "description": "Content to display when this panel is active" }
+        {
+          "name": "id",
+          "type": "string",
+          "default": null,
+          "required": true,
+          "description": "Must match a TabItem id in the parent Tabs"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "default": null,
+          "required": true,
+          "description": "Content to display when this panel is active"
+        }
       ],
       "examples": [
         "<TabPanel id=\"overview\"><p>Overview content</p></TabPanel>"
       ],
-      "tags": ["tab", "panel", "content", "tabs"]
+      "tags": [
+        "tab",
+        "panel",
+        "content",
+        "tabs"
+      ]
     },
     {
       "name": "Spinner",
       "description": "Loading indicator in three styles: a spinning ring (SVG arc), a bouncing dots row, and a pulsing circle. Used inline or as a full-area loader.",
       "filePath": "src/components/Spinner/Spinner.tsx",
-      "variants": ["ring", "dots", "pulse"],
+      "variants": [
+        "ring",
+        "dots",
+        "pulse"
+      ],
       "props": [
-        { "name": "variant", "type": "'ring' | 'dots' | 'pulse'", "default": "'ring'", "required": false, "description": "Animation style of the spinner" },
-        { "name": "size", "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "default": "'md'", "required": false, "description": "Bounding box size of the spinner" },
-        { "name": "label", "type": "string", "default": "'Loading...'", "required": false, "description": "Accessible label for screen readers (visually hidden)" }
+        {
+          "name": "variant",
+          "type": "'ring' | 'dots' | 'pulse'",
+          "default": "'ring'",
+          "required": false,
+          "description": "Animation style of the spinner"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "required": false,
+          "description": "Bounding box size of the spinner"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "'Loading...'",
+          "required": false,
+          "description": "Accessible label for screen readers (visually hidden)"
+        }
       ],
       "examples": [
         "<Spinner />",
         "<Spinner variant=\"dots\" size=\"sm\" />",
         "<Spinner variant=\"pulse\" size=\"lg\" label=\"Processing...\" />"
       ],
-      "tags": ["spinner", "loader", "loading", "progress", "indicator", "async"]
+      "tags": [
+        "spinner",
+        "loader",
+        "loading",
+        "progress",
+        "indicator",
+        "async"
+      ]
     },
     {
       "name": "Modal",
       "description": "Accessible dialog overlay built on the native <dialog> element. Closes on Escape key or backdrop click. Supports title, description, footer actions, and five sizes.",
       "filePath": "src/components/Modal/Modal.tsx",
-      "variants": ["sm", "md", "lg", "xl", "full"],
+      "variants": [
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "full"
+      ],
       "props": [
-        { "name": "open", "type": "boolean", "default": null, "required": true, "description": "Controls visibility of the modal" },
-        { "name": "onClose", "type": "() => void", "default": null, "required": true, "description": "Callback fired when the modal requests to close (Escape or backdrop)" },
-        { "name": "title", "type": "string", "default": "undefined", "required": false, "description": "Modal heading rendered in the header" },
-        { "name": "description", "type": "string", "default": "undefined", "required": false, "description": "Subheading rendered below the title" },
-        { "name": "footer", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Action buttons rendered in the sticky footer" },
-        { "name": "size", "type": "'sm' | 'md' | 'lg' | 'xl' | 'full'", "default": "'md'", "required": false, "description": "Maximum width of the modal panel" },
-        { "name": "closeOnBackdrop", "type": "boolean", "default": "true", "required": false, "description": "Whether clicking the backdrop closes the modal" },
-        { "name": "children", "type": "React.ReactNode", "default": null, "required": true, "description": "Scrollable body content of the modal" }
+        {
+          "name": "open",
+          "type": "boolean",
+          "default": null,
+          "required": true,
+          "description": "Controls visibility of the modal"
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "default": null,
+          "required": true,
+          "description": "Callback fired when the modal requests to close (Escape or backdrop)"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Modal heading rendered in the header"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Subheading rendered below the title"
+        },
+        {
+          "name": "footer",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Action buttons rendered in the sticky footer"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg' | 'xl' | 'full'",
+          "default": "'md'",
+          "required": false,
+          "description": "Maximum width of the modal panel"
+        },
+        {
+          "name": "closeOnBackdrop",
+          "type": "boolean",
+          "default": "true",
+          "required": false,
+          "description": "Whether clicking the backdrop closes the modal"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "default": null,
+          "required": true,
+          "description": "Scrollable body content of the modal"
+        }
       ],
       "examples": [
         "<Modal open={isOpen} onClose={close} title=\"Confirm delete\" description=\"This action cannot be undone.\" footer={<><Button variant=\"ghost\" onClick={close}>Cancel</Button><Button variant=\"danger\">Delete</Button></>}>Are you sure?</Modal>",
         "<Modal open={open} onClose={close} size=\"lg\" title=\"Edit profile\">...</Modal>"
       ],
-      "tags": ["modal", "dialog", "overlay", "popup", "confirm", "sheet"]
+      "tags": [
+        "modal",
+        "dialog",
+        "overlay",
+        "popup",
+        "confirm",
+        "sheet"
+      ]
     },
     {
       "name": "Table",
       "description": "Full-featured data table with client-side sort, search, and pagination. Supports custom cell renderers, striped rows, density presets, skeleton loading, and an empty state slot.",
       "filePath": "src/components/Table/Table.tsx",
-      "variants": ["default", "striped", "compact", "spacious"],
+      "variants": [
+        "default",
+        "striped",
+        "compact",
+        "spacious"
+      ],
       "props": [
-        { "name": "columns", "type": "ColumnDef<T>[]", "default": null, "required": true, "description": "Column definitions: { key, header, renderCell?, sortFn?, sortable?, searchable?, width?, minWidth?, align? }" },
-        { "name": "data", "type": "T[]", "default": null, "required": true, "description": "Array of row data objects" },
-        { "name": "rowKey", "type": "keyof T | ((row: T) => string | number)", "default": "undefined", "required": false, "description": "Unique key for each row — column key or extractor function" },
-        { "name": "sortable", "type": "boolean", "default": "false", "required": false, "description": "Enables column sort headers" },
-        { "name": "searchable", "type": "boolean", "default": "false", "required": false, "description": "Renders a search bar that filters rows" },
-        { "name": "searchPlaceholder", "type": "string", "default": "'Search…'", "required": false, "description": "Placeholder for the search input" },
-        { "name": "pageSize", "type": "number", "default": "undefined", "required": false, "description": "Enables pagination when set; controls rows per page" },
-        { "name": "sortKey", "type": "string", "default": "undefined", "required": false, "description": "Controlled sort column key" },
-        { "name": "sortDirection", "type": "'asc' | 'desc' | null", "default": "undefined", "required": false, "description": "Controlled sort direction" },
-        { "name": "onSortChange", "type": "(key: string, direction: SortDirection) => void", "default": "undefined", "required": false, "description": "Callback for controlled sort" },
-        { "name": "loading", "type": "boolean", "default": "false", "required": false, "description": "Shows skeleton rows instead of data" },
-        { "name": "emptyState", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Custom content shown when data is empty" },
-        { "name": "striped", "type": "boolean", "default": "false", "required": false, "description": "Alternates row background colors" },
-        { "name": "hoverable", "type": "boolean", "default": "true", "required": false, "description": "Highlights rows on hover" },
-        { "name": "density", "type": "'comfortable' | 'compact' | 'spacious'", "default": "'comfortable'", "required": false, "description": "Controls cell padding" },
-        { "name": "onRowClick", "type": "(row: T, index: number) => void", "default": "undefined", "required": false, "description": "Callback fired when a row is clicked" }
+        {
+          "name": "columns",
+          "type": "ColumnDef<T>[]",
+          "default": null,
+          "required": true,
+          "description": "Column definitions: { key, header, renderCell?, sortFn?, sortable?, searchable?, width?, minWidth?, align? }"
+        },
+        {
+          "name": "data",
+          "type": "T[]",
+          "default": null,
+          "required": true,
+          "description": "Array of row data objects"
+        },
+        {
+          "name": "rowKey",
+          "type": "keyof T | ((row: T) => string | number)",
+          "default": "undefined",
+          "required": false,
+          "description": "Unique key for each row — column key or extractor function"
+        },
+        {
+          "name": "sortable",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Enables column sort headers"
+        },
+        {
+          "name": "searchable",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Renders a search bar that filters rows"
+        },
+        {
+          "name": "searchPlaceholder",
+          "type": "string",
+          "default": "'Search…'",
+          "required": false,
+          "description": "Placeholder for the search input"
+        },
+        {
+          "name": "pageSize",
+          "type": "number",
+          "default": "undefined",
+          "required": false,
+          "description": "Enables pagination when set; controls rows per page"
+        },
+        {
+          "name": "sortKey",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Controlled sort column key"
+        },
+        {
+          "name": "sortDirection",
+          "type": "'asc' | 'desc' | null",
+          "default": "undefined",
+          "required": false,
+          "description": "Controlled sort direction"
+        },
+        {
+          "name": "onSortChange",
+          "type": "(key: string, direction: SortDirection) => void",
+          "default": "undefined",
+          "required": false,
+          "description": "Callback for controlled sort"
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Shows skeleton rows instead of data"
+        },
+        {
+          "name": "emptyState",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Custom content shown when data is empty"
+        },
+        {
+          "name": "striped",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Alternates row background colors"
+        },
+        {
+          "name": "hoverable",
+          "type": "boolean",
+          "default": "true",
+          "required": false,
+          "description": "Highlights rows on hover"
+        },
+        {
+          "name": "density",
+          "type": "'comfortable' | 'compact' | 'spacious'",
+          "default": "'comfortable'",
+          "required": false,
+          "description": "Controls cell padding"
+        },
+        {
+          "name": "onRowClick",
+          "type": "(row: T, index: number) => void",
+          "default": "undefined",
+          "required": false,
+          "description": "Callback fired when a row is clicked"
+        }
       ],
       "examples": [
         "const columns = [{ key: 'name', header: 'Name', sortable: true }, { key: 'status', header: 'Status', renderCell: (v) => <Badge variant=\"brand\">{v}</Badge> }];\n<Table columns={columns} data={rows} rowKey=\"id\" sortable searchable pageSize={10} />",
         "<Table columns={columns} data={[]} loading={true} />"
       ],
-      "tags": ["table", "data", "grid", "list", "sort", "search", "pagination", "rows", "columns"]
+      "tags": [
+        "table",
+        "data",
+        "grid",
+        "list",
+        "sort",
+        "search",
+        "pagination",
+        "rows",
+        "columns"
+      ]
     },
     {
       "name": "Checkbox",
       "description": "Accessible checkbox with optional label, description, error message, and indeterminate state. Uses React.forwardRef.",
       "filePath": "src/components/Checkbox/Checkbox.tsx",
-      "variants": ["default", "checked", "indeterminate", "error", "disabled"],
+      "variants": [
+        "default",
+        "checked",
+        "indeterminate",
+        "error",
+        "disabled"
+      ],
       "props": [
-        { "name": "label", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Label text rendered beside the checkbox" },
-        { "name": "description", "type": "string", "default": "undefined", "required": false, "description": "Helper text shown below the label" },
-        { "name": "error", "type": "string", "default": "undefined", "required": false, "description": "Error message that replaces the description" },
-        { "name": "size", "type": "'sm' | 'md' | 'lg'", "default": "'md'", "required": false, "description": "Size of the checkbox box" },
-        { "name": "indeterminate", "type": "boolean", "default": "false", "required": false, "description": "Renders a dash icon instead of a checkmark" },
-        { "name": "checked", "type": "boolean", "default": "undefined", "required": false, "description": "Controlled checked state" },
-        { "name": "onChange", "type": "React.ChangeEventHandler<HTMLInputElement>", "default": "undefined", "required": false, "description": "Change handler" },
-        { "name": "disabled", "type": "boolean", "default": "false", "required": false, "description": "Disables the checkbox" }
+        {
+          "name": "label",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Label text rendered beside the checkbox"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Helper text shown below the label"
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Error message that replaces the description"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "required": false,
+          "description": "Size of the checkbox box"
+        },
+        {
+          "name": "indeterminate",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Renders a dash icon instead of a checkmark"
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "default": "undefined",
+          "required": false,
+          "description": "Controlled checked state"
+        },
+        {
+          "name": "onChange",
+          "type": "React.ChangeEventHandler<HTMLInputElement>",
+          "default": "undefined",
+          "required": false,
+          "description": "Change handler"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Disables the checkbox"
+        }
       ],
       "examples": [
         "<Checkbox label=\"I agree to the terms\" checked={agreed} onChange={e => setAgreed(e.target.checked)} />",
         "<Checkbox label=\"Select all\" indeterminate={someSelected} />",
         "<Checkbox label=\"Notifications\" description=\"Receive email updates\" size=\"lg\" />"
       ],
-      "tags": ["checkbox", "check", "form", "boolean", "selection", "multi-select"]
+      "tags": [
+        "checkbox",
+        "check",
+        "form",
+        "boolean",
+        "selection",
+        "multi-select"
+      ]
     },
     {
       "name": "RadioGroup",
       "description": "Fieldset container that provides a shared name, value, and onChange context for Radio children. Supports vertical and horizontal layouts.",
       "filePath": "src/components/Radio/Radio.tsx",
-      "variants": ["vertical", "horizontal"],
+      "variants": [
+        "vertical",
+        "horizontal"
+      ],
       "props": [
-        { "name": "name", "type": "string", "default": null, "required": true, "description": "HTML name attribute shared by all Radio children" },
-        { "name": "value", "type": "string", "default": "undefined", "required": false, "description": "Controlled selected value" },
-        { "name": "onChange", "type": "(value: string) => void", "default": "undefined", "required": false, "description": "Callback fired when selection changes" },
-        { "name": "label", "type": "string", "default": "undefined", "required": false, "description": "Group legend label rendered above the radios" },
-        { "name": "error", "type": "string", "default": "undefined", "required": false, "description": "Error message rendered below the group" },
-        { "name": "size", "type": "'sm' | 'md' | 'lg'", "default": "'md'", "required": false, "description": "Size applied to all Radio children" },
-        { "name": "direction", "type": "'vertical' | 'horizontal'", "default": "'vertical'", "required": false, "description": "Layout direction of the radio options" },
-        { "name": "disabled", "type": "boolean", "default": "false", "required": false, "description": "Disables all Radio children" },
-        { "name": "children", "type": "React.ReactNode", "default": null, "required": true, "description": "Radio components" }
+        {
+          "name": "name",
+          "type": "string",
+          "default": null,
+          "required": true,
+          "description": "HTML name attribute shared by all Radio children"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Controlled selected value"
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "default": "undefined",
+          "required": false,
+          "description": "Callback fired when selection changes"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Group legend label rendered above the radios"
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Error message rendered below the group"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "required": false,
+          "description": "Size applied to all Radio children"
+        },
+        {
+          "name": "direction",
+          "type": "'vertical' | 'horizontal'",
+          "default": "'vertical'",
+          "required": false,
+          "description": "Layout direction of the radio options"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Disables all Radio children"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "default": null,
+          "required": true,
+          "description": "Radio components"
+        }
       ],
       "examples": [
         "<RadioGroup name=\"plan\" value={plan} onChange={setPlan} label=\"Select plan\"><Radio value=\"free\" label=\"Free\" /><Radio value=\"pro\" label=\"Pro\" description=\"$12/mo\" /></RadioGroup>",
         "<RadioGroup name=\"size\" direction=\"horizontal\"><Radio value=\"sm\" label=\"Small\" /><Radio value=\"lg\" label=\"Large\" /></RadioGroup>"
       ],
-      "tags": ["radio", "group", "form", "select", "option", "choice"]
+      "tags": [
+        "radio",
+        "group",
+        "form",
+        "select",
+        "option",
+        "choice"
+      ]
     },
     {
       "name": "Radio",
       "description": "Single radio button option, intended to be used inside a RadioGroup. Inherits name, value, onChange, disabled, and size from group context.",
       "filePath": "src/components/Radio/Radio.tsx",
-      "variants": ["default", "checked", "disabled"],
+      "variants": [
+        "default",
+        "checked",
+        "disabled"
+      ],
       "props": [
-        { "name": "value", "type": "string", "default": null, "required": true, "description": "The value this radio represents" },
-        { "name": "label", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Text label beside the radio" },
-        { "name": "description", "type": "string", "default": "undefined", "required": false, "description": "Helper text below the label" },
-        { "name": "disabled", "type": "boolean", "default": "undefined", "required": false, "description": "Disables this specific radio (overrides group)" },
-        { "name": "size", "type": "'sm' | 'md' | 'lg'", "default": "undefined", "required": false, "description": "Overrides size from RadioGroup context" }
+        {
+          "name": "value",
+          "type": "string",
+          "default": null,
+          "required": true,
+          "description": "The value this radio represents"
+        },
+        {
+          "name": "label",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Text label beside the radio"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Helper text below the label"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "undefined",
+          "required": false,
+          "description": "Disables this specific radio (overrides group)"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "undefined",
+          "required": false,
+          "description": "Overrides size from RadioGroup context"
+        }
       ],
       "examples": [
         "<Radio value=\"monthly\" label=\"Monthly\" description=\"Billed every month\" />"
       ],
-      "tags": ["radio", "option", "form", "select"]
+      "tags": [
+        "radio",
+        "option",
+        "form",
+        "select"
+      ]
     },
     {
       "name": "Tooltip",
       "description": "Floating label that appears on hover or focus after a configurable delay. Supports four placement directions and two color variants.",
       "filePath": "src/components/Tooltip/Tooltip.tsx",
-      "variants": ["dark", "brand"],
+      "variants": [
+        "dark",
+        "brand"
+      ],
       "props": [
-        { "name": "content", "type": "React.ReactNode", "default": null, "required": true, "description": "Text or JSX content shown inside the tooltip" },
-        { "name": "children", "type": "React.ReactElement", "default": null, "required": true, "description": "The trigger element the tooltip is attached to" },
-        { "name": "placement", "type": "'top' | 'bottom' | 'left' | 'right'", "default": "'top'", "required": false, "description": "Which side of the trigger the tooltip appears on" },
-        { "name": "variant", "type": "'dark' | 'brand'", "default": "'dark'", "required": false, "description": "Color style of the tooltip bubble" },
-        { "name": "delay", "type": "number", "default": "300", "required": false, "description": "Milliseconds to wait before showing the tooltip" },
-        { "name": "disabled", "type": "boolean", "default": "false", "required": false, "description": "Prevents the tooltip from showing" },
-        { "name": "maxWidth", "type": "number", "default": "240", "required": false, "description": "Maximum width in pixels of the tooltip bubble" }
+        {
+          "name": "content",
+          "type": "React.ReactNode",
+          "default": null,
+          "required": true,
+          "description": "Text or JSX content shown inside the tooltip"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactElement",
+          "default": null,
+          "required": true,
+          "description": "The trigger element the tooltip is attached to"
+        },
+        {
+          "name": "placement",
+          "type": "'top' | 'bottom' | 'left' | 'right'",
+          "default": "'top'",
+          "required": false,
+          "description": "Which side of the trigger the tooltip appears on"
+        },
+        {
+          "name": "variant",
+          "type": "'dark' | 'brand'",
+          "default": "'dark'",
+          "required": false,
+          "description": "Color style of the tooltip bubble"
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "default": "300",
+          "required": false,
+          "description": "Milliseconds to wait before showing the tooltip"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Prevents the tooltip from showing"
+        },
+        {
+          "name": "maxWidth",
+          "type": "number",
+          "default": "240",
+          "required": false,
+          "description": "Maximum width in pixels of the tooltip bubble"
+        }
       ],
       "examples": [
         "<Tooltip content=\"Copy to clipboard\"><Button variant=\"ghost\" iconLeft={<CopyIcon />} aria-label=\"Copy\" /></Tooltip>",
         "<Tooltip content=\"Pro feature\" variant=\"brand\" placement=\"right\"><Badge>Pro</Badge></Tooltip>"
       ],
-      "tags": ["tooltip", "popover", "hover", "hint", "floating", "info"]
+      "tags": [
+        "tooltip",
+        "popover",
+        "hover",
+        "hint",
+        "floating",
+        "info"
+      ]
     },
     {
       "name": "Divider",
       "description": "Horizontal or vertical rule that separates content sections. Horizontal dividers support an optional centered, left, or right-aligned text label.",
       "filePath": "src/components/Divider/Divider.tsx",
-      "variants": ["default", "subtle", "strong", "brand"],
+      "variants": [
+        "default",
+        "subtle",
+        "strong",
+        "brand"
+      ],
       "props": [
-        { "name": "orientation", "type": "'horizontal' | 'vertical'", "default": "'horizontal'", "required": false, "description": "Direction of the divider line" },
-        { "name": "variant", "type": "'default' | 'subtle' | 'strong' | 'brand'", "default": "'default'", "required": false, "description": "Color of the divider line" },
-        { "name": "label", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Text label rendered inside the horizontal divider line" },
-        { "name": "labelAlign", "type": "'left' | 'center' | 'right'", "default": "'center'", "required": false, "description": "Horizontal alignment of the label" },
-        { "name": "spacing", "type": "'sm' | 'md' | 'lg'", "default": "'md'", "required": false, "description": "Vertical margin above and below the divider" }
+        {
+          "name": "orientation",
+          "type": "'horizontal' | 'vertical'",
+          "default": "'horizontal'",
+          "required": false,
+          "description": "Direction of the divider line"
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'subtle' | 'strong' | 'brand'",
+          "default": "'default'",
+          "required": false,
+          "description": "Color of the divider line"
+        },
+        {
+          "name": "label",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Text label rendered inside the horizontal divider line"
+        },
+        {
+          "name": "labelAlign",
+          "type": "'left' | 'center' | 'right'",
+          "default": "'center'",
+          "required": false,
+          "description": "Horizontal alignment of the label"
+        },
+        {
+          "name": "spacing",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "required": false,
+          "description": "Vertical margin above and below the divider"
+        }
       ],
       "examples": [
         "<Divider />",
@@ -361,37 +1276,122 @@
         "<Divider variant=\"brand\" label=\"Advanced\" labelAlign=\"left\" spacing=\"lg\" />",
         "<Divider orientation=\"vertical\" />"
       ],
-      "tags": ["divider", "separator", "rule", "hr", "line", "section"]
+      "tags": [
+        "divider",
+        "separator",
+        "rule",
+        "hr",
+        "line",
+        "section"
+      ]
     },
     {
       "name": "EmptyState",
       "description": "Centered placeholder for zero-data views. Accepts an icon, title, description, and one or two action buttons. Includes preset icons via EmptyStateIcons.",
       "filePath": "src/components/EmptyState/EmptyState.tsx",
-      "variants": ["default", "brand", "muted"],
+      "variants": [
+        "default",
+        "brand",
+        "muted"
+      ],
       "props": [
-        { "name": "title", "type": "string", "default": null, "required": true, "description": "Primary heading of the empty state" },
-        { "name": "description", "type": "string", "default": "undefined", "required": false, "description": "Supporting text below the title" },
-        { "name": "icon", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Illustration or icon — use EmptyStateIcons presets or a custom SVG" },
-        { "name": "action", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Primary action button" },
-        { "name": "secondaryAction", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Secondary action button" },
-        { "name": "size", "type": "'sm' | 'md' | 'lg'", "default": "'md'", "required": false, "description": "Scale of the icon, text, and padding" },
-        { "name": "variant", "type": "'default' | 'brand' | 'muted'", "default": "'default'", "required": false, "description": "Color scheme of the icon and title" }
+        {
+          "name": "title",
+          "type": "string",
+          "default": null,
+          "required": true,
+          "description": "Primary heading of the empty state"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Supporting text below the title"
+        },
+        {
+          "name": "icon",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Illustration or icon — use EmptyStateIcons presets or a custom SVG"
+        },
+        {
+          "name": "action",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Primary action button"
+        },
+        {
+          "name": "secondaryAction",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Secondary action button"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "required": false,
+          "description": "Scale of the icon, text, and padding"
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'brand' | 'muted'",
+          "default": "'default'",
+          "required": false,
+          "description": "Color scheme of the icon and title"
+        }
       ],
       "examples": [
         "<EmptyState icon={EmptyStateIcons.inbox} title=\"No messages\" description=\"When you receive messages, they'll appear here.\" action={<Button>Compose</Button>} />",
         "<EmptyState icon={EmptyStateIcons.search} title=\"No results\" description=\"Try a different search term.\" size=\"sm\" />"
       ],
-      "tags": ["empty", "zero-state", "placeholder", "no-data", "illustration", "blank-slate"]
+      "tags": [
+        "empty",
+        "zero-state",
+        "placeholder",
+        "no-data",
+        "illustration",
+        "blank-slate"
+      ]
     },
     {
       "name": "Shimmer",
       "description": "Animated skeleton placeholder for loading states. Includes ShimmerText, ShimmerAvatar, ShimmerCard, ShimmerTable, and ShimmerList composites.",
       "filePath": "src/components/Shimmer/Shimmer.tsx",
-      "variants": ["default", "text", "avatar", "card", "table", "list"],
+      "variants": [
+        "default",
+        "text",
+        "avatar",
+        "card",
+        "table",
+        "list"
+      ],
       "props": [
-        { "name": "width", "type": "string | number", "default": "undefined", "required": false, "description": "CSS width of the shimmer block" },
-        { "name": "height", "type": "string | number", "default": "16", "required": false, "description": "CSS height of the shimmer block in pixels" },
-        { "name": "radius", "type": "'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full'", "default": "'md'", "required": false, "description": "Border radius of the shimmer block" }
+        {
+          "name": "width",
+          "type": "string | number",
+          "default": "undefined",
+          "required": false,
+          "description": "CSS width of the shimmer block"
+        },
+        {
+          "name": "height",
+          "type": "string | number",
+          "default": "16",
+          "required": false,
+          "description": "CSS height of the shimmer block in pixels"
+        },
+        {
+          "name": "radius",
+          "type": "'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full'",
+          "default": "'md'",
+          "required": false,
+          "description": "Border radius of the shimmer block"
+        }
       ],
       "examples": [
         "<Shimmer width={200} height={16} radius=\"md\" />",
@@ -400,68 +1400,244 @@
         "<ShimmerTable rows={5} cols={4} />",
         "<ShimmerList items={4} avatar={true} />"
       ],
-      "tags": ["shimmer", "skeleton", "loading", "placeholder", "animation", "ghost"]
+      "tags": [
+        "shimmer",
+        "skeleton",
+        "loading",
+        "placeholder",
+        "animation",
+        "ghost"
+      ]
     },
     {
       "name": "Sidebar",
       "description": "Vertical navigation panel with collapsible mode. Renders NavItem links or buttons, supports nested child items, icon slots, badge counts, and a footer slot.",
       "filePath": "src/components/Navigation/Navigation.tsx",
-      "variants": ["expanded", "collapsed"],
+      "variants": [
+        "expanded",
+        "collapsed"
+      ],
       "props": [
-        { "name": "items", "type": "NavItem[]", "default": null, "required": true, "description": "Navigation items: { id, label, href?, icon?, badge?, active?, disabled?, children? }" },
-        { "name": "logo", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Logo or wordmark rendered at the top of the sidebar" },
-        { "name": "footer", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Content rendered at the bottom of the sidebar (e.g. user profile)" },
-        { "name": "collapsed", "type": "boolean", "default": "false", "required": false, "description": "When true, collapses the sidebar to icon-only width (64px)" },
-        { "name": "onItemClick", "type": "(item: NavItem) => void", "default": "undefined", "required": false, "description": "Callback fired when a nav item is clicked" }
+        {
+          "name": "items",
+          "type": "NavItem[]",
+          "default": null,
+          "required": true,
+          "description": "Navigation items: { id, label, href?, icon?, badge?, active?, disabled?, children? }"
+        },
+        {
+          "name": "logo",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Logo or wordmark rendered at the top of the sidebar"
+        },
+        {
+          "name": "footer",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Content rendered at the bottom of the sidebar (e.g. user profile)"
+        },
+        {
+          "name": "collapsed",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "When true, collapses the sidebar to icon-only width (64px)"
+        },
+        {
+          "name": "onItemClick",
+          "type": "(item: NavItem) => void",
+          "default": "undefined",
+          "required": false,
+          "description": "Callback fired when a nav item is clicked"
+        }
       ],
       "examples": [
         "<Sidebar items={navItems} logo={<Logo />} footer={<UserProfile />} collapsed={false} onItemClick={navigate} />"
       ],
-      "tags": ["sidebar", "navigation", "nav", "menu", "layout", "vertical"]
+      "tags": [
+        "sidebar",
+        "navigation",
+        "nav",
+        "menu",
+        "layout",
+        "vertical"
+      ]
     },
     {
       "name": "Topbar",
       "description": "Sticky horizontal header bar with three content zones: left, center, and right. Used as a page-level navigation header.",
       "filePath": "src/components/Navigation/Navigation.tsx",
-      "variants": ["default"],
+      "variants": [
+        "default"
+      ],
       "props": [
-        { "name": "left", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Content in the left zone (e.g. logo, breadcrumbs)" },
-        { "name": "center", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Content in the center zone (e.g. search bar)" },
-        { "name": "right", "type": "React.ReactNode", "default": "undefined", "required": false, "description": "Content in the right zone (e.g. actions, avatar)" }
+        {
+          "name": "left",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Content in the left zone (e.g. logo, breadcrumbs)"
+        },
+        {
+          "name": "center",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Content in the center zone (e.g. search bar)"
+        },
+        {
+          "name": "right",
+          "type": "React.ReactNode",
+          "default": "undefined",
+          "required": false,
+          "description": "Content in the right zone (e.g. actions, avatar)"
+        }
       ],
       "examples": [
         "<Topbar left={<Logo />} center={<SearchInput />} right={<><Button variant=\"ghost\">Docs</Button><Avatar name=\"JS\" /></>} />"
       ],
-      "tags": ["topbar", "header", "navigation", "navbar", "appbar", "layout"]
+      "tags": [
+        "topbar",
+        "header",
+        "navigation",
+        "navbar",
+        "appbar",
+        "layout"
+      ]
     },
     {
       "name": "DatePicker",
       "description": "Full-featured date and datetime picker with day, month, and year views. Supports controlled and uncontrolled modes, min/max date bounds, clearable selection, and an optional time picker.",
       "filePath": "src/components/DatePicker/DatePicker.tsx",
-      "variants": ["date", "datetime"],
+      "variants": [
+        "date",
+        "datetime"
+      ],
       "props": [
-        { "name": "value", "type": "Date | null", "default": "undefined", "required": false, "description": "Controlled selected date" },
-        { "name": "defaultValue", "type": "Date | null", "default": "null", "required": false, "description": "Initial date for uncontrolled usage" },
-        { "name": "onChange", "type": "(date: Date | null) => void", "default": "undefined", "required": false, "description": "Callback fired when the selected date changes" },
-        { "name": "mode", "type": "'date' | 'datetime'", "default": "'date'", "required": false, "description": "Whether to include a time picker" },
-        { "name": "placeholder", "type": "string", "default": "'Select date'", "required": false, "description": "Placeholder text for the trigger input" },
-        { "name": "minDate", "type": "Date", "default": "undefined", "required": false, "description": "Earliest selectable date" },
-        { "name": "maxDate", "type": "Date", "default": "undefined", "required": false, "description": "Latest selectable date" },
-        { "name": "disabled", "type": "boolean", "default": "false", "required": false, "description": "Disables the date picker" },
-        { "name": "clearable", "type": "boolean", "default": "true", "required": false, "description": "Shows a clear button to deselect the date" },
-        { "name": "label", "type": "string", "default": "undefined", "required": false, "description": "Label rendered above the trigger input" },
-        { "name": "hint", "type": "string", "default": "undefined", "required": false, "description": "Helper text below the input" },
-        { "name": "error", "type": "string", "default": "undefined", "required": false, "description": "Error message below the input" },
-        { "name": "size", "type": "'sm' | 'md' | 'lg'", "default": "'md'", "required": false, "description": "Height of the trigger input" },
-        { "name": "showFooter", "type": "boolean", "default": "true", "required": false, "description": "Shows Today, Clear, and Apply buttons in the calendar footer" },
-        { "name": "highlightWeekends", "type": "boolean", "default": "false", "required": false, "description": "Renders weekend day numbers in violet" }
+        {
+          "name": "value",
+          "type": "Date | null",
+          "default": "undefined",
+          "required": false,
+          "description": "Controlled selected date"
+        },
+        {
+          "name": "defaultValue",
+          "type": "Date | null",
+          "default": "null",
+          "required": false,
+          "description": "Initial date for uncontrolled usage"
+        },
+        {
+          "name": "onChange",
+          "type": "(date: Date | null) => void",
+          "default": "undefined",
+          "required": false,
+          "description": "Callback fired when the selected date changes"
+        },
+        {
+          "name": "mode",
+          "type": "'date' | 'datetime'",
+          "default": "'date'",
+          "required": false,
+          "description": "Whether to include a time picker"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "default": "'Select date'",
+          "required": false,
+          "description": "Placeholder text for the trigger input"
+        },
+        {
+          "name": "minDate",
+          "type": "Date",
+          "default": "undefined",
+          "required": false,
+          "description": "Earliest selectable date"
+        },
+        {
+          "name": "maxDate",
+          "type": "Date",
+          "default": "undefined",
+          "required": false,
+          "description": "Latest selectable date"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Disables the date picker"
+        },
+        {
+          "name": "clearable",
+          "type": "boolean",
+          "default": "true",
+          "required": false,
+          "description": "Shows a clear button to deselect the date"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Label rendered above the trigger input"
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Helper text below the input"
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "default": "undefined",
+          "required": false,
+          "description": "Error message below the input"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "required": false,
+          "description": "Height of the trigger input"
+        },
+        {
+          "name": "showFooter",
+          "type": "boolean",
+          "default": "true",
+          "required": false,
+          "description": "Shows Today, Clear, and Apply buttons in the calendar footer"
+        },
+        {
+          "name": "highlightWeekends",
+          "type": "boolean",
+          "default": "false",
+          "required": false,
+          "description": "Renders weekend day numbers in violet"
+        }
       ],
       "examples": [
         "<DatePicker label=\"Due date\" value={date} onChange={setDate} />",
         "<DatePicker mode=\"datetime\" label=\"Schedule\" minDate={new Date()} showFooter />",
         "<DatePicker label=\"Birthdate\" clearable={false} maxDate={new Date()} />"
       ],
-      "tags": ["datepicker", "date", "calendar", "time", "datetime", "input", "form", "picker"]
+      "tags": [
+        "datepicker",
+        "date",
+        "calendar",
+        "time",
+        "datetime",
+        "input",
+        "form",
+        "picker"
+      ]
     }
   ]
 }

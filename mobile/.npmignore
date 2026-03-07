@@ -1,0 +1,30 @@
+# Expo app files (not part of the library)
+App.tsx
+index.js
+app.config.js
+metro.config.js
+babel.config.js
+.expo/
+.rnstorybook/
+
+# Stories and tests
+**/*.stories.tsx
+**/*.stories.ts
+**/*.test.tsx
+**/*.test.ts
+
+# Config files
+tsup.config.ts
+tsconfig.json
+.eslintrc*
+.prettierrc*
+
+# Docs
+*.md
+tokens.json
+registry.json
+ai-context.md
+
+# Build artifacts consumers don't need
+node_modules/
+package-lock.json

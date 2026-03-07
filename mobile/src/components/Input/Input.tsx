@@ -29,7 +29,7 @@ const sizeConfig: Record<InputSize, { height: number; fontSize: number; paddingH
   lg: { height: 48, fontSize: 16, paddingH: spacing[4] },
 };
 
-export const Input = React.forwardRef<TextInput, InputProps>(
+export const Input = React.forwardRef<React.ElementRef<typeof TextInput>, InputProps>(
   (
     {
       label,

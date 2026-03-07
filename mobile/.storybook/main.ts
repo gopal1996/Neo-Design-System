@@ -14,6 +14,7 @@ const config: StorybookConfig = {
   async viteFinal(config) {
     const { mergeConfig } = await import('vite');
     return mergeConfig(config, {
+      base: './',
       resolve: {
         alias: {
           'react-native': 'react-native-web',

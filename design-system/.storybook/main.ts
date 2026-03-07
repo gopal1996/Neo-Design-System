@@ -19,6 +19,7 @@ const config: StorybookConfig = {
   },
   async viteFinal(config) {
     return mergeConfig(config, {
+      base: './',
       css: {
         postcss: {
           plugins: [tailwindcss, autoprefixer],

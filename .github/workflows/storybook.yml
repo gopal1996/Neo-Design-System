@@ -7,6 +7,7 @@ on:
       - 'design-system/**'
       - 'mobile/src/**'
       - 'mobile/.storybook/**'
+      - 'mobile/package.json'
       - '.github/workflows/storybook.yml'
   workflow_dispatch:
 

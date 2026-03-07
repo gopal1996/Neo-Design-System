@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   // Path is relative to repo root (storybook runs from there, not from mobile/)
-  stories: ['../mobile/src/components/**/*.stories.?(ts|tsx|js|jsx)'],
+  stories: ['../src/components/**/*.stories.?(ts|tsx|js|jsx)'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',

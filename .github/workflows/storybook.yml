@@ -35,13 +35,8 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
 
-      # Install from repo root to hoist workspace deps into root node_modules
-      - name: Install root dependencies
-        run: npm install --legacy-peer-deps
-
-      # Explicitly install design-system devDeps (not always hoisted by workspaces)
-      - name: Install design-system dependencies
-        working-directory: design-system
+      # All storybook packages are in root devDependencies — one install covers everything
+      - name: Install dependencies
         run: npm install --legacy-peer-deps
 
       - name: Build Storybook

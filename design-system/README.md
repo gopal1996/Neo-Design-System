@@ -189,7 +189,7 @@ This loads the full Neo design system context — tokens, component APIs, Figma 
 **Manual install** (if the postinstall didn't run or you don't use npm):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/your-org/figma-ai/main/design-system/neo.md \
+curl -fsSL https://raw.githubusercontent.com/gopal1996/Neo-Design-System/refs/heads/main/design-system/neo.md \
   -o ~/.claude/skills/neo.md
 ```
 

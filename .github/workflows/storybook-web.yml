@@ -21,9 +21,6 @@ jobs:
   build:
     name: Build Storybook
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: design-system
 
     steps:
       - name: Checkout
@@ -34,12 +31,15 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: design-system/package-lock.json
+          cache-dependency-path: package-lock.json
 
+      # Install from repo root — design-system is a workspace member,
+      # so its devDependencies are resolved via the root package-lock.json
       - name: Install dependencies
         run: npm ci
 
       - name: Build Storybook
+        working-directory: design-system
         run: npm run build-storybook
         env:
           NODE_OPTIONS: --max-old-space-size=4096

@@ -1,0 +1,152 @@
+/**
+ * Neo Design System — Global CSS
+ * Black & Violet · Modern SaaS · Web
+ *
+ * Usage: Import this file once at the root of your app.
+ */
+
+/* ─── Google Fonts ──────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens as CSS Custom Properties ─────────────────── */
+/* Kept for backwards-compat with any inline styles.             */
+:root {
+  --bg-base: #000000; --bg-subtle: #08080F; --bg-elevated: #0F0F1A;
+  --bg-overlay: #13131F; --bg-muted: #1A1A2E;
+  --violet-950: #1A0640; --violet-900: #2E0D6E; --violet-800: #4C1D95;
+  --violet-700: #5B21B6; --violet-600: #6D28D9; --violet-500: #7C3AED;
+  --violet-400: #8B5CF6; --violet-300: #A78BFA; --violet-200: #C4B5FD;
+  --violet-100: #DDD6FE; --violet-50:  #EDE9FE;
+  --neutral-900: #16162A; --neutral-800: #1E1E35; --neutral-700: #2C2C4A;
+  --neutral-600: #3D3D5C; --neutral-500: #55556E; --neutral-400: #6B6B8A;
+  --neutral-300: #9898B3; --neutral-200: #C5C5D8; --neutral-100: #E2E2EE;
+  --neutral-50: #F0F0F8;
+  --success: #10B981; --success-lt: #34D399; --success-bg: #0A2A1F;
+  --warning: #F59E0B; --warning-lt: #FCD34D; --warning-bg: #2A1F06;
+  --error: #EF4444; --error-lt: #F87171; --error-bg: #2A0A0A;
+  --info: #06B6D4; --info-lt: #22D3EE; --info-bg: #041F26;
+  --text-primary: #F0F0F8; --text-secondary: #9898B3;
+  --text-tertiary: #6B6B8A; --text-disabled: #3D3D5C; --text-brand: #A78BFA;
+  --border: #2C2C4A; --border-subtle: #1E1E35; --border-strong: #3D3D5C;
+  --border-brand: #6D28D9; --border-focus: #8B5CF6;
+  --font-sans: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 16px; -webkit-text-size-adjust: 100%; tab-size: 4; }
+
+  body {
+    background-color: #000000;
+    color: #F0F0F8;
+    font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background-color: rgba(124, 58, 237, 0.35); color: #F0F0F8; }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #08080F; }
+  ::-webkit-scrollbar-thumb { background: #2C2C4A; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #6D28D9; }
+
+  :focus-visible {
+    outline: 2px solid #8B5CF6;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  a { color: #A78BFA; text-decoration: none; transition: color 150ms ease; }
+  a:hover { color: #C4B5FD; }
+
+  img, video, svg { max-width: 100%; display: block; }
+}
+
+@layer components {
+  /* ── Checkbox: checked / indeterminate visual state ─────────── */
+  .nx-checkbox-input:checked ~ .nx-checkbox-box,
+  .nx-checkbox-input:indeterminate ~ .nx-checkbox-box {
+    background-color: #7C3AED;
+    border-color: #7C3AED;
+  }
+  .nx-checkbox-input:focus-visible ~ .nx-checkbox-box {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.35);
+  }
+  .nx-checkbox-input:hover:not(:disabled) ~ .nx-checkbox-box {
+    border-color: #8B5CF6;
+  }
+  .nx-checkbox-input:checked ~ .nx-checkbox-box .nx-checkbox-icon,
+  .nx-checkbox-input:indeterminate ~ .nx-checkbox-box .nx-checkbox-icon {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .nx-checkbox-box.nx-has-error { border-color: #EF4444 !important; }
+
+  /* ── Radio: checked visual state ────────────────────────────── */
+  .nx-radio-input:checked ~ .nx-radio-circle { border-color: #7C3AED; }
+  .nx-radio-input:focus-visible ~ .nx-radio-circle {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.35);
+  }
+  .nx-radio-input:hover:not(:disabled) ~ .nx-radio-circle { border-color: #8B5CF6; }
+  .nx-radio-input:checked ~ .nx-radio-circle .nx-radio-dot { transform: scale(1); }
+
+  /* ── Tooltip arrows ─────────────────────────────────────────── */
+  .nx-tooltip-arrow {
+    position: absolute; width: 6px; height: 6px;
+    background: inherit; border: inherit; transform: rotate(45deg);
+  }
+  .nx-tooltip-top .nx-tooltip-arrow {
+    bottom: -4px; left: 50%; margin-left: -3px; border-top: none; border-left: none;
+  }
+  .nx-tooltip-bottom .nx-tooltip-arrow {
+    top: -4px; left: 50%; margin-left: -3px; border-bottom: none; border-right: none;
+  }
+  .nx-tooltip-left .nx-tooltip-arrow {
+    right: -4px; top: 50%; margin-top: -3px; border-left: none; border-bottom: none;
+  }
+  .nx-tooltip-right .nx-tooltip-arrow {
+    left: -4px; top: 50%; margin-top: -3px; border-right: none; border-top: none;
+  }
+
+  /* ── Table: context-dependent row styles ────────────────────── */
+  .nx-table-hoverable .nx-tr:hover { background: rgba(124, 58, 237, 0.04); }
+  .nx-table-striped .nx-tr:nth-child(even) { background: rgba(255, 255, 255, 0.015); }
+
+  /* ── Shimmer sweep ──────────────────────────────────────────── */
+  .nx-shimmer {
+    display: block;
+    background: linear-gradient(90deg, #1E1E35 25%, #2C2C4A 50%, #1E1E35 75%);
+    background-size: 200% 100%;
+    animation: shimmer-sweep 1.6s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  /* ── Skeleton cell ──────────────────────────────────────────── */
+  .nx-skeleton-cell {
+    display: block; height: 14px; border-radius: 4px;
+    background: linear-gradient(90deg, #1E1E35 25%, #2C2C4A 50%, #1E1E35 75%);
+    background-size: 200% 100%;
+    animation: shimmer-sweep 1.5s ease-in-out infinite;
+  }
+
+  /* ── Input/search/time field special pseudo-states ──────────── */
+  .nx-input::placeholder { color: #6B6B8A; }
+  .nx-search-input::-webkit-search-cancel-button { display: none; }
+  .nx-search-input::placeholder { color: #6B6B8A; }
+  .nx-time-input { -moz-appearance: textfield; }
+  .nx-time-input::-webkit-inner-spin-button,
+  .nx-time-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+  .nx-dp-input::placeholder { color: #6B6B8A; }
+}

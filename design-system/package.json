@@ -1,0 +1,40 @@
+{
+  "name": "@nexus/web",
+  "version": "1.0.0",
+  "description": "Neo Design System — Black & Violet · Web & Mobile · Modern SaaS",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.6.18",
+    "@storybook/addon-essentials": "^8.6.18",
+    "@storybook/addon-interactions": "^8.6.18",
+    "@storybook/react": "^8.6.18",
+    "@storybook/react-vite": "^8.6.18",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^8.6.18",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.27",
+    "clsx": "^2.1.1",
+    "postcss": "^8.5.8",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^3.4.19"
+  }
+}

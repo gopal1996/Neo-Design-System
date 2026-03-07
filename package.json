@@ -1,0 +1,14 @@
+{
+  "name": "nexus",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "design-system",
+    "mobile"
+  ],
+  "scripts": {
+    "web": "npm run --workspace=design-system",
+    "mobile": "npm run --workspace=mobile",
+    "storybook": "npm run storybook --workspace=design-system"
+  }
+}

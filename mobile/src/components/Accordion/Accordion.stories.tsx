@@ -39,12 +39,6 @@ const PlusIcon = () => (
   </View>
 );
 
-const MinusIcon = () => (
-  <View style={{ width: 18, height: 18, alignItems: 'center', justifyContent: 'center' }}>
-    <View style={{ width: 14, height: 1.5, backgroundColor: colors.violet400, borderRadius: 1 }} />
-  </View>
-);
-
 const icon = StyleSheet.create({
   wrap: {
     width: 28, height: 28, borderRadius: 8,

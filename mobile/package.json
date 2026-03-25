@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Neo Design System — React Native components",
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "react-native": "src/index.ts",
@@ -46,9 +46,15 @@
     "react-native-svg": ">=15.0.0"
   },
   "peerDependenciesMeta": {
-    "react-native-reanimated": { "optional": true },
-    "react-native-gesture-handler": { "optional": true },
-    "react-native-svg": { "optional": true }
+    "react-native-reanimated": {
+      "optional": true
+    },
+    "react-native-gesture-handler": {
+      "optional": true
+    },
+    "react-native-svg": {
+      "optional": true
+    }
   },
   "dependencies": {},
   "devDependencies": {

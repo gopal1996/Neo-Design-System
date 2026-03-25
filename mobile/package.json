@@ -1,6 +1,6 @@
 {
   "name": "@neo-design-library/mobile",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Neo Design System — React Native components",
   "license": "MIT",
   "main": "index.js",

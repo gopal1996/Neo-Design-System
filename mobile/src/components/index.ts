@@ -15,3 +15,4 @@ export * from './Banner';
 export * from './BottomNavigation';
 export * from './FAB';
 export * from './DataTable';
+export * from './Select';

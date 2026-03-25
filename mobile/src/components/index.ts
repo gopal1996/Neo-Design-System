@@ -18,3 +18,4 @@ export * from './DataTable';
 export * from './Select';
 export * from './Accordion';
 export * from './DatePicker';
+export * from './Textarea';

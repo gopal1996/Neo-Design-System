@@ -16,3 +16,4 @@ export * from './BottomNavigation';
 export * from './FAB';
 export * from './DataTable';
 export * from './Select';
+export * from './Accordion';

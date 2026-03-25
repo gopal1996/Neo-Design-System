@@ -4,6 +4,7 @@ export default defineConfig({
   entry: ['src/index.ts'],
   format: ['cjs', 'esm'],
   dts: true,
+  tsconfig: 'tsconfig.build.json',
   sourcemap: true,
   clean: true,
   // All RN ecosystem deps are peer deps — don't bundle them

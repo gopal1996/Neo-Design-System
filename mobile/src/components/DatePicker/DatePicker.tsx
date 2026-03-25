@@ -237,10 +237,10 @@ const CalIcon: React.FC<{ color?: string }> = ({ color = colors.textTertiary }) 
   </View>
 );
 
-const XIcon: React.FC<{ size?: number }> = ({ size = 10 }) => (
+const XIcon: React.FC<{ size?: number; color?: string }> = ({ size = 10, color = colors.textTertiary }) => (
   <View style={{ width: size, height: size, alignItems: 'center', justifyContent: 'center' }}>
-    <View style={{ position: 'absolute', width: size, height: 1.5, backgroundColor: colors.textTertiary, transform: [{ rotate: '45deg' }] }} />
-    <View style={{ position: 'absolute', width: size, height: 1.5, backgroundColor: colors.textTertiary, transform: [{ rotate: '-45deg' }] }} />
+    <View style={{ position: 'absolute', width: size, height: 1.5, backgroundColor: color, transform: [{ rotate: '45deg' }] }} />
+    <View style={{ position: 'absolute', width: size, height: 1.5, backgroundColor: color, transform: [{ rotate: '-45deg' }] }} />
   </View>
 );
 

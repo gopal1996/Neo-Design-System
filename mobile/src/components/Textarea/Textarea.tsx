@@ -623,8 +623,8 @@ export const Textarea = React.forwardRef<ComponentRef<typeof TextInput>, Textare
                 onContentSizeChange={onContentSize}
                 onSelectionChange={e => { selectionRef.current = e.nativeEvent.selection; }}
                 textAlignVertical="top"
-                accessibilityRequired={required}
                 accessibilityLabel={label}
+                accessibilityHint={required ? 'Required' : undefined}
                 style={[
                   s.input,
                   {
